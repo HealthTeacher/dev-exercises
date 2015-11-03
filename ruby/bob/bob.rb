@@ -23,7 +23,7 @@ class Bob
   end
 
   def pure_question?(remark)
-    (remark.end_with? "?") && not_all_caps?(remark)
+    (remark.end_with? "?") && (not_all_caps?(remark) || has_digits?(remark))
   end
 
   def other?(remark)
@@ -31,7 +31,7 @@ class Bob
   end
 
   def no_letters?(remark)
-    (remark =~ /[a-zA-Z]/) == nil
+    remark.gsub(/[a-zA-Z]/, "") == remark
   end
 
   def not_question?(remark)
@@ -39,27 +39,12 @@ class Bob
   end
 
   def not_all_caps?(remark)
-    ((remark =~ /[a-z]/) || (remark =~ /\d/))
+    remark.gsub(/[a-z]/, "") != remark
+  end
+
+  def has_digits?(remark)
+    remark.gsub(/\d/, "") != remark
   end
 
 end
 
-# class Bob
-
-#   def hey(remark)
-#     if remark == "WATCH OUT!"
-#       "Whoa, chill out!"
-#     elsif remark.strip.empty?
-#       "Fine. Be that way!"
-#     elsif (remark =~ /[a-zA-Z]/) == nil && (remark.end_with? "?") == false
-#       "Whatever."
-#     elsif (remark.end_with? "?") && ((remark =~ /[a-z]/) || (remark =~ /\d/))
-#       "Sure."
-#     elsif remark.upcase == remark
-#       "Whoa, chill out!"
-#     else
-#       "Whatever."
-#     end
-#   end
-
-# end
