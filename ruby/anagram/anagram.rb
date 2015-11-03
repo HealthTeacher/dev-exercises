@@ -4,12 +4,12 @@ class Anagram
     @word = word
   end
 
-  def match(word_list)
+  def match(potential_angrms)
     anagram_list = []
-    remove_identical_words!(word_list)
-    word_list.each_with_index do |word, index|
+    remove_identical_words!(potential_angrms)
+    potential_angrms.each_with_index do |word, index|
       if canonical(word) == canonical(@word)
-        anagram_list << word_list[index]
+        anagram_list << potential_angrms[index]
       end
     end
     anagram_list
@@ -19,8 +19,8 @@ class Anagram
     word.downcase.split('').sort
   end
 
-  def remove_identical_words!(word_list)
-    word_list.delete_if { |word| word.downcase == @word }
+  def remove_identical_words!(potential_angrms)
+    potential_angrms.delete_if { |word| word.downcase == @word }
   end
 
 end
