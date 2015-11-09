@@ -5,15 +5,9 @@ class Anagram
   end
 
   def match(potential_angrms)
-    anagram_list = []
+    canonical_word = canonical(@word)
     remove_identical_words!(potential_angrms)
-    # potential_angrms.each_with_index do |word, index|
-    #   if canonical(word) == canonical(@word)
-    #     anagram_list << potential_angrms[index]
-    #   end
-    # end
-    # anagram_list
-    potential_angrms.select {|word| canonical(word) == canonical(@word)}
+    potential_angrms.select {|word| canonical(word) == canonical_word }
   end
 
   def canonical(word)
