@@ -19,7 +19,7 @@ class Bob
   end
 
   def question?(remark)
-    (remark.end_with? "?")
+    remark.end_with? "?"
   end
 
   def blank?(remark)

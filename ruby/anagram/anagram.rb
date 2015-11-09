@@ -5,9 +5,9 @@ class Anagram
   end
 
   def match(potential_angrms)
-    canonical_word = canonical(@word)
+    sorted_word = canonical(@word)
     remove_identical_words!(potential_angrms)
-    potential_angrms.select {|word| canonical(word) == canonical_word }
+    potential_angrms.select { |word| canonical(word) == sorted_word }
   end
 
   def canonical(word)
