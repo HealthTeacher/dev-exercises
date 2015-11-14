@@ -5,7 +5,7 @@ html, body, div, p, footer, section{
   cursor:pointer;
   font-family: 'Roboto Sans', sans-serif;
   font-size: inherit;
-  color: #B8B8B8
+  color: #C3B7B5
 }
 
 .group:after {
@@ -15,7 +15,7 @@ html, body, div, p, footer, section{
 
 }
 html {
-  background:  #F5F5F5;
+  background:  #C3B7B5;
   min-width: 450px
 }
 
@@ -107,7 +107,7 @@ img {
   width: 100%;
   margin: 0px auto 20px 0;
   padding: 0 0 20px 0;
-  border-bottom: 3px solid #F5F5F5;
+  border-bottom: 3px solid #C3B7B5;
 }
 .left {
   font-family: 'Fredoka One', cursive;
