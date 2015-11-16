@@ -1,0 +1,192 @@
+html, body, div, p, footer, section{
+  padding: 0;
+  margin: 0;
+  border: none;
+  cursor:pointer;
+  font-family: 'Roboto Sans', sans-serif;
+  font-size: inherit;
+  color: #C3B7B5
+}
+
+.group:after {
+  content:" ";
+  display: block;
+  clear: both;
+
+}
+html {
+  background:  #C3B7B5;
+  min-width: 450px
+}
+
+body {
+
+  z-index: -2;
+  background: white;
+  width: 90%;
+  margin: 20px auto;
+  border-radius: 15px;
+}
+
+.frontpage {
+
+  display: block;
+  margin: 0 auto 10px auto;
+  padding: 20px 0;
+  height: 440px;
+  background: white;
+  position: relative;
+  border-radius: 15px;
+}
+
+
+#loose {
+  width: 95%;
+  display: block;
+  margin:  auto;
+  padding: 0 2.5% 0 2.5% ;
+  height:450px;
+  float: right;
+  position: absolute;
+}
+
+.heart {
+  z-index: 2;
+  float: right;
+  position: absolute;
+  top: 100px;
+  right: 100px;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  padding: 10px;
+
+}
+.emptyheart {
+  background: white;
+}
+.fullheart {
+  background: red;
+}
+
+.off {
+  display: none;
+}
+.circle {
+  z-index: 1;
+  float: right;
+  position: absolute;
+  top: 102px;
+  right: 102px;
+  height: 46px;
+  width: 46px;
+  border-radius: 50%;
+  border: 10px solid red;
+  background: transparent;
+}
+
+.on {
+  top: 70px;
+  right: 70px;
+  height: 110px;
+  width: 110px;
+  border: 10px solid transparent;
+  transition: top 1s, right 1s, height 1s, width 1s, border 1s, ease;
+}
+
+
+
+img {
+
+  height: 100px;
+  width: 100px;
+}
+
+.content {
+  display: block;
+  width: 100%;
+  margin: 0px auto 20px 0;
+  padding: 0 0 20px 0;
+  border-bottom: 3px solid #C3B7B5;
+}
+.left {
+  font-family: 'Fredoka One', cursive;
+  font-size: 40px;
+  color: #6BC18D;
+  display: block;
+  float: left;
+  text-decoration: underline;
+  padding: 0 0 0 2.5%;
+}
+
+.right {
+  font-size: 30px;
+  display: block;
+  float: right;
+  padding: 0 2.5% 0 0;
+}
+
+.clock {
+  color: green;
+  float: right;
+  height: 30px;
+  width: auto;
+  padding: 5px 3px 0 0;
+
+}
+.top {
+  z-index: 5;
+  background: white;
+  display: block;
+  width: 300px;
+  border-radius: 10px;
+  margin: 0;
+  transition: margin 2s, ease-in-out;
+    position: absolute;
+
+}
+
+
+.top > img {
+  float: left;
+  z-index: 1;
+
+}
+
+.top > p {
+  display: inline;
+  padding:40px 0;
+  float: left;
+  top: 10px;
+}
+
+.top:hover {
+  margin: 0 0 0 140px;
+  transition: margin 1s, ease-in-out;
+}
+ section {
+  position: relative;
+  height: 110px;
+  margin: 0 0 0 25px;
+}
+
+ .more {
+  display: block;
+  z-index: 0;
+  float: right;
+  position: absolute;
+  padding: 0 0 0 20px;
+  top: 40px;
+  width: 200px;
+}
+
+footer {
+  z-index: -5;
+  display: block;
+  background: transparent;
+  border-radius: 10px;
+  float: left;
+    font-size: 24px;
+
+
+}
