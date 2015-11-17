@@ -1,32 +1,33 @@
-var slidingDiv = document.getElementById("instructions");
-var visibleHeart = document.getElementById("outlinedHeart");
+var instructions = document.getElementById("instructions");
+var outlinedHeart = document.getElementById("outlinedHeart");
 var mainDiv = document.getElementById("mainDiv");
 var solidHeart = document.getElementById("solidHeart");
 var heartContainer = document.getElementById("heartContainer");
+var circleBorder = document.getElementById("circleBorder");
 
-slidingDiv.onclick = function () {
-  slidingDiv.classList.add("active");
+instructions.onclick = function () {
+  instructions.classList.add("active");
 };
 
-slidingDiv.onmouseleave = function () {
-  slidingDiv.classList.remove("active");
+instructions.onmouseleave = function () {
+  instructions.classList.remove("active");
 };
 
 mainDiv.onmouseover = function () {
   heartContainer.classList.add("active");
-}
+};
 
 mainDiv.onmouseleave = function () {
   if(solidHeart.className === "active") {
-    return
+    return;
   } else {
     heartContainer.classList.remove("active");
   }
-}
+};
 
 heartContainer.onclick = function () {
-  visibleHeart.classList.toggle("active");
+  outlinedHeart.classList.toggle("active");
   solidHeart.classList.toggle("active");
   heartContainer.classList.toggle("clicked");
-  console.log("It works for us, Fred!")
-}
+  circleBorder.classList.toggle("active");
+};
