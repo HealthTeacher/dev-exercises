@@ -3,6 +3,7 @@ var visibleHeart = document.getElementById("outlinedHeart");
 var mainDiv = document.getElementById("mainDiv");
 var solidHeart = document.getElementById("solidHeart");
 var heartContainer = document.getElementById("heartContainer");
+
 slidingDiv.onclick = function () {
   slidingDiv.classList.add("active");
 };
@@ -16,7 +17,11 @@ mainDiv.onmouseover = function () {
 }
 
 mainDiv.onmouseleave = function () {
-  heartContainer.classList.remove("active");
+  if(solidHeart.className === "active") {
+    return
+  } else {
+    heartContainer.classList.remove("active");
+  }
 }
 
 heartContainer.onclick = function () {
@@ -24,9 +29,4 @@ heartContainer.onclick = function () {
   solidHeart.classList.toggle("active");
   heartContainer.classList.toggle("clicked");
   console.log("It works for us, Fred!")
-}
-
-solidHeart.onclick = function () {
-  // visibleHeart.classList.toggle("active");
-  solidHeart.classList.remove("active");
 }
