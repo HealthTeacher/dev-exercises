@@ -1,0 +1,301 @@
+/* line 5, ../../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* ----------------------------------------------------------------------- */
+@-webkit-keyframes ripple-effect {
+  80% {
+    margin: -15px;
+    padding-left: 20px;
+    padding-right: 12px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+  }
+  100% {
+    border: 8px solid rgba(238, 238, 238, 0);
+  }
+}
+@-moz-keyframes ripple-effect {
+  80% {
+    margin: -15px;
+    padding-left: 20px;
+    padding-right: 12px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+  }
+  100% {
+    border: 8px solid rgba(238, 238, 238, 0);
+  }
+}
+@-ms-keyframes ripple-effect {
+  80% {
+    margin: -15px;
+    padding-left: 20px;
+    padding-right: 12px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+  }
+  100% {
+    border: 8px solid rgba(238, 238, 238, 0);
+  }
+}
+@keyframes ripple-effect {
+  80% {
+    margin: -15px;
+    padding-left: 20px;
+    padding-right: 12px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+  }
+  100% {
+    border: 8px solid rgba(238, 238, 238, 0);
+  }
+}
+/* ----------------------------------------------------------------------- */
+/* line 64, ../scss/style.scss */
+html {
+  background: #F5F5F5;
+  font-size: 21px;
+  font-family: "museo-sans", Helvetica, arail, sans-serif;
+  font-weight: bold;
+}
+
+/* line 71, ../scss/style.scss */
+body {
+  margin: 5% auto;
+  max-width: 500px;
+}
+
+/* line 76, ../scss/style.scss */
+.container {
+  display: relative;
+  width: auto;
+  background: #FFFFFF;
+  margin: 1em auto;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+  -moz-box-shadow: 0px 4px 5px #DDDDDD;
+  -webkit-box-shadow: 0px 4px 5px #DDDDDD;
+  box-shadow: 0px 4px 5px #DDDDDD;
+}
+/* line 81, ../scss/style.scss */
+.container > div {
+  margin: 0.3em 0.66em;
+}
+/* line 83, ../scss/style.scss */
+.container > div > div {
+  margin-top: 0.2em;
+}
+/* line 88, ../scss/style.scss */
+.container:hover {
+  cursor: pointer;
+}
+/* line 92, ../scss/style.scss */
+.container .part0 {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+/* line 98, ../scss/style.scss */
+.container .part0 .add {
+  margin: 0;
+  max-width: 60px;
+  min-width: 32px;
+  min-height: 32px;
+  background-color: #F5841F;
+  border-bottom: solid 0.4em #FFFFFF;
+  border-right: solid 0.4em #FFFFFF;
+  border-color: #FFFFFF;
+  -moz-border-radius-bottomright: 100%;
+  -webkit-border-bottom-right-radius: 100%;
+  border-bottom-right-radius: 100%;
+  -moz-border-radius-topleft: 8px;
+  -webkit-border-top-left-radius: 8px;
+  border-top-left-radius: 8px;
+}
+/* line 108, ../scss/style.scss */
+.container .part0 .add img {
+  width: 100%;
+  height: 80%;
+  margin-top: 4%;
+  margin-left: -2%;
+}
+/* line 120, ../scss/style.scss */
+.container .part1 {
+  position: relative;
+}
+/* line 125, ../scss/style.scss */
+.container .part2 .name, .container .part2 .time {
+  display: inline;
+}
+/* line 129, ../scss/style.scss */
+.container .part2 .name {
+  float: left;
+  margin-top: 0;
+  color: #6CC18D;
+  padding-bottom: 2px;
+  border-bottom: solid 2px #68BF88;
+}
+/* line 138, ../scss/style.scss */
+.container .part2 .time {
+  float: right;
+  color: #919191;
+  font-size: 15px;
+}
+/* line 146, ../scss/style.scss */
+.container .part3 {
+  padding-bottom: 0.6em;
+  color: #999999;
+  font-size: 15px;
+  line-height: 21px;
+  display: -webkit-flex;
+  display: flex;
+}
+/* line 153, ../scss/style.scss */
+.container .part3 img {
+  width: 2em;
+  height: 2em;
+  margin-right: 0.6em;
+}
+/* line 159, ../scss/style.scss */
+.container .part3 p {
+  display: inline;
+}
+/* line 163, ../scss/style.scss */
+.container .part3 p:first-child {
+  display: none;
+}
+/* line 167, ../scss/style.scss */
+.container .part3:hover {
+  cursor: pointer;
+}
+/* line 169, ../scss/style.scss */
+.container .part3:hover p:first-child {
+  display: inline;
+  margin-right: 0.5em;
+}
+/* line 177, ../scss/style.scss */
+.container:hover .heart {
+  visibility: visible;
+}
+
+/* line 186, ../scss/style.scss */
+.image {
+  width: 100%;
+  min-width: 10em;
+  height: auto;
+  margin-top: 0.5em;
+}
+
+/* line 193, ../scss/style.scss */
+.heart {
+  position: absolute;
+  z-index: 2;
+  top: 25px;
+  right: 15px;
+  width: 42px;
+  height: 42px;
+  background-color: #EEEEEE;
+  visibility: hidden;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+/* line 204, ../scss/style.scss */
+.heart img {
+  margin-top: 0.5em;
+  cursor: pointer;
+}
+
+/* line 210, ../scss/style.scss */
+.ripple {
+  visibility: hidden;
+  position: relative;
+  top: -38px;
+  right: 2px;
+  width: 30px;
+  height: 30px;
+  border: 8px solid #EA2225;
+  border-radius: 100%;
+}
+/* line 219, ../scss/style.scss */
+.ripple.active {
+  visibility: visible;
+  -webkit-animation: ripple-effect 0.5s;
+  -moz-animation: ripple-effect 0.5s;
+  -ms-animation: ripple-effect 0.5s;
+  animation: ripple-effect 0.5s;
+}
+
+/* line 225, ../scss/style.scss */
+hr {
+  margin-top: 45px;
+  border-color: #F5F5F5;
+  background-color: #F5F5F5;
+  color: #F5F5F5;
+  clear: both;
+}

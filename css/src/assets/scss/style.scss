@@ -1,0 +1,231 @@
+@import "compass/reset";
+@import "compass/css3/flexbox";
+@import "compass/css3/border-radius";
+@import "compass/css3/box-shadow";
+@import "compass/css3/animation";
+@import "compass/css3/transition";
+
+$background-color: #F5F5F5;
+$video-title-color: #6CC18D;
+$time-color: #919191;
+$view-more-color: #999999;
+
+$font-size: 21px;
+$time-font-size: 15px;
+$view-more-font-size: 15px;
+$font-family: "museo-sans", Helvetica, arail, sans-serif; 
+$font-weight: bold;
+
+$default-border-radius: 8px;
+$default-box-shadow-color: #DDDDDD;
+$default-box-shadow-v-offset: 4px;
+
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content; 
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  } 
+}
+
+@mixin animation ($stuff ) {
+    -webkit-animation: $stuff;
+    -moz-animation: $stuff;
+    -ms-animation: $stuff;
+    animation: $stuff;
+}
+
+/* ----------------------------------------------------------------------- */
+
+@include keyframes(ripple-effect) {
+    0% {
+    }
+    80% {
+        margin: -15px;
+        padding-left: 20px;
+        padding-right: 12px;
+        padding-top: 10px;
+        padding-bottom: 20px;
+    }
+    100% {
+        border: 8px solid rgba(238, 238, 238, 0);
+    }
+}
+
+/* ----------------------------------------------------------------------- */
+
+html {
+    background: $background-color;
+    font-size: $font-size;
+    font-family: $font-family;
+    font-weight: $font-weight;
+}
+
+body {
+    margin: 5% auto;
+    max-width: 500px;
+}
+
+.container {
+    display: relative;
+    width: auto;
+    background: #FFFFFF;
+    margin: 1em auto;
+    & > div {
+        margin: 0.3em 0.66em;
+        & > div {
+            margin-top: 0.2em;
+        }
+    }
+    
+    &:hover {
+        cursor: pointer;
+    }
+    
+    .part0 {
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        & .add {
+            margin: 0;
+            max-width: 60px;
+            min-width: 32px;
+            min-height: 32px;
+            background-color: #F5841F;
+            border-bottom: solid 0.4em #FFFFFF;
+            border-right: solid 0.4em #FFFFFF;
+            border-color: #FFFFFF;
+
+            img {
+                width: 100%;
+                height: 80%;
+                margin-top: 4%;
+                margin-left: -2%;
+            }
+        
+            @include border-bottom-right-radius(100%);
+            @include border-top-left-radius($default-border-radius);
+        }
+    }
+    
+    .part1 {
+        position: relative;
+    }
+    
+    .part2 {
+        .name, .time {
+            display: inline;
+        }
+        
+        .name {
+            float: left;
+            margin-top: 0;
+
+            color: $video-title-color;
+            padding-bottom: 2px;
+            border-bottom: solid 2px #68BF88;
+        }
+        
+        .time {
+            float: right;
+
+            color: $time-color;
+            font-size: $time-font-size;
+        }
+    }
+    
+    .part3 {
+        padding-bottom: 0.6em;
+        color: $view-more-color;
+        font-size: $view-more-font-size;
+        line-height: 21px;
+         @include display-flex(flex);
+
+        img {
+            width: 2em;
+            height: 2em;
+            margin-right: 0.6em;
+        }
+        
+        p {
+            display: inline;
+        }
+
+        p:first-child {
+            display: none;
+        }
+
+        &:hover {
+            cursor: pointer;
+            p:first-child{
+                display: inline;
+                margin-right: 0.5em;
+            }
+        }
+    }
+    
+    &:hover {
+        .heart {
+            visibility: visible;
+        }
+    }
+    
+    @include border-radius();
+    @include box-shadow();
+}
+
+.image {
+    width: 100%;
+    min-width: 10em;
+    height: auto;
+    margin-top: 0.5em;
+}
+
+.heart {
+    position: absolute;
+    z-index: 2;
+    top: 25px;
+    right: 15px;
+    width: 42px;
+    height: 42px;
+    background-color: #EEEEEE;
+    visibility: hidden;
+    @include border-radius(50%);
+    
+    img {
+        margin-top: 0.5em;
+        cursor: pointer;
+    }
+}
+
+.ripple {
+    visibility: hidden;
+    position: relative;
+    top: -38px;
+    right: 2px;
+    width: 30px;
+    height: 30px;
+    border: 8px solid #EA2225;
+    border-radius: 100%;
+    &.active {
+        visibility: visible;
+        @include animation(ripple-effect .5s);
+    }
+}
+
+hr {
+    margin-top: 45px;
+    border-color: #F5F5F5;
+    background-color: #F5F5F5;
+    color: #F5F5F5;
+    clear: both;
+}
