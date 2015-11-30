@@ -1,0 +1,15 @@
+{
+  "name": "leapyear",
+  "version": "1.0.0",
+  "description": "given a year, determine if it is a leap year or not",
+  "main": "leap.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chego/dev-exercises"
+  },
+  "author": "Kelly Crase",
+  "license": "ISC"
+}
