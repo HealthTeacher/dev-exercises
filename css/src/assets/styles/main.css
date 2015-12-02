@@ -1,0 +1,141 @@
+/* GLOBAL
+======================================   */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font: 400 1em "museo-sans", sans-serif;
+  background-color: #f5f5f5;
+  color: #000;
+}
+
+.wrapper {
+  width: 450px;
+  margin: 1em auto;
+}
+
+.lefty {
+  float: left;
+}
+
+.righty {
+  float: right;
+}
+
+
+/* TEXT
+======================================    */
+
+.green a {
+  font: 900 1.3em "museo-sans", sans-serif;
+  color: #6cc18d;
+  margin: 0.5em 0 0;
+  border-bottom: 2px solid currentColor;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.clockface {
+  font: 400 1em "fontello";
+  color: #919191;
+  display: inline-block;
+  margin: 0.7em 0.5em;
+}
+
+.timer {
+  font: 600 1.1em "museo-sans", sans-serif;
+  color: #919191;
+  display: inline-block;
+  margin: 0.7em 0;
+}
+
+.bottom {
+  border-top: 1px #eeeeee solid;
+  padding: 1em;
+  background: #fff;
+  color: #999999;
+  border-radius: 0 0 0.7em 0.7em;
+}
+
+.shoe {
+  width: 2em;
+  height: 2em;
+  vertical-align: middle;
+  display: inline-block;
+  background: url(/src/assets/images/icon-shoe-dancing.svg);
+  margin: 0 0.5em 0 0;
+}
+
+.dancing {
+  font: 600 0.9em "museo-sans", sans-serif;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.viewmore {
+  font: 600 0.9em "museo-sans", sans-serif;
+  vertical-align: middle;
+  /*display: inline-block;*/
+  display:none;
+  margin-right: 0.5em
+
+}
+
+
+/*ELEMENTS
+======================================   */
+
+.container {
+  background-color: #fff;
+  padding: 1em;
+  border-radius: 0.7em 0.7em 0 0;
+  color: white;
+  z-index: 1;
+}
+
+.penguin {
+  background: #fff;
+  height: 236px;
+  width: 420px;
+  z-index: 2;
+  position: relative;
+}
+
+.plus {
+  border-right: 0.7em solid #fff;
+  border-bottom: 0.7em solid #fff;
+  background: #f5841f;
+  width: 3.5em;
+  height: 3.5em;
+  border-radius: 0.7em 0.7em 6em;
+  position: absolute;
+  z-index: 3;
+}
+
+.plus span {
+  font: 400 2.8em "Fontello";
+  color: white;
+}
+
+.heart {
+  background: #fff;
+  position: absolute;
+  border-radius: 50%;
+  width: 3em;
+  height: 3em;
+  text-align: center;
+  line-height: 3.8em;
+  margin-left: 22em;
+  margin-top: 1.5em;
+  /*display: none;*/
+  z-index: 4;
+}
+
+.heart span {
+  font: 400 1.3em "Fontello";
+  color: #777;
+  margin-right: 0.1em;
+}
