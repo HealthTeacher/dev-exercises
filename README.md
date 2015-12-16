@@ -1,4 +1,3 @@
-# GoNoodle Dev Exercises
 
 ### Instructions
 
