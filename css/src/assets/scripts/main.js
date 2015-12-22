@@ -1,5 +1,5 @@
 /*global $:false */
-/*
+
 
 var $heart1 = $('.heart1');
 var $heart2 = $('.heart2');
