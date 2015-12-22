@@ -1,12 +1,6 @@
 /*global $:false */
 /*
-DONE ** heart in outline and round white background shows and hides on hover on .container (original state)
-** heart turns white and background becomes red on click
-** heart background has red animation of red outer glow on click
-** heart stays white and background stays red when pointer is no longer hovering
-** heart returns to original state when heart is clicked again
-DONE ** view more shows with right slider and toggles on hover on .bottom
-** */
+
 var $heart1 = $('.heart1');
 var $heart2 = $('.heart2');
 var $container = $('.container');
