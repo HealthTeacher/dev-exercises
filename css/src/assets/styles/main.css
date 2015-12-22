@@ -26,7 +26,7 @@ body {
 }
 
 
-/* TEXT
+/* TEXT ELEMENTS
 ======================================    */
 
 .green a {
@@ -52,14 +52,6 @@ body {
   margin: 0.7em 0;
 }
 
-.bottom {
-  border-top: 1px #eeeeee solid;
-  padding: 1em;
-  background: #fff;
-  color: #999999;
-  border-radius: 0 0 0.7em 0.7em;
-}
-
 .shoe {
   width: 2em;
   height: 2em;
@@ -78,14 +70,15 @@ body {
 .viewmore {
   font: 600 0.9em "museo-sans", sans-serif;
   vertical-align: middle;
-  /*display: inline-block;*/
-  display:none;
+  display: inline-block;
+  width: 75px;
+  height: 1em;
+  display: none;
   margin-right: 0.5em
-
 }
 
 
-/*ELEMENTS
+/* SECTION ELEMENTS
 ======================================   */
 
 .container {
@@ -93,7 +86,20 @@ body {
   padding: 1em;
   border-radius: 0.7em 0.7em 0 0;
   color: white;
+  box-shadow: 0 0 3px #888;
+  position: relative;
   z-index: 1;
+}
+
+.bottom {
+  border-top: 1px #eeeeee solid;
+  padding: 1em;
+  background: #fff;
+  color: #999999;
+  border-radius: 0 0 0.7em 0.7em;
+  box-shadow: 0 2px 5px #888;
+  cursor: pointer;
+  z-index: 2;
 }
 
 .penguin {
@@ -120,22 +126,63 @@ body {
   color: white;
 }
 
-.heart {
-  background: #fff;
-  position: absolute;
+.heart1 {
+  background: white;
   border-radius: 50%;
-  width: 3em;
-  height: 3em;
+  cursor: pointer;
+  display: none;
+  margin-left: 22.8em;
+  margin-top: 1.1em;
+  padding: 0.5em;
+  position: absolute;
   text-align: center;
-  line-height: 3.8em;
-  margin-left: 22em;
-  margin-top: 1.5em;
-  /*display: none;*/
   z-index: 4;
 }
 
-.heart span {
-  font: 400 1.3em "Fontello";
-  color: #777;
-  margin-right: 0.1em;
+.heart1 img {
+  width: 1.2em;
+}
+
+.heart2 img {
+  width: 1.2em;
+}
+
+.heart2 {
+  background: red;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none;
+  padding: 0.5em;
+  position: absolute;
+  text-align: center;
+  margin-left: 22.8em;
+  margin-top: 1.1em;
+  padding: 0.5em;
+  z-index: 4;
+}
+
+.heart2:active,
+.active {
+  background: red;
+  border-radius: 50%;
+  cursor: pointer;
+  display: block;
+  margin-left: 22.8em;
+  margin-top: 1.1em;
+  padding: 0.5em;
+  position: absolute;
+  text-align: center;
+  z-index: 4;
+}
+
+.circle {
+  right: 1.9em;
+  top: 2.1em;
+  position: absolute;
+  border: red 0.4em solid;
+  border-radius: 50%;
+  display: none;
+  height: 1.9em;
+  width: 1.9em;
+  z-index: 10;
 }
