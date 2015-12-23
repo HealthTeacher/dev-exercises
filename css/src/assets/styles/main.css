@@ -1,0 +1,192 @@
+/* GLOBAL
+======================================   */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font: 400 1em "museo-sans", sans-serif;
+  background-color: #f5f5f5;
+  color: #000;
+}
+
+.wrapper {
+  width: 450px;
+  margin: 1em auto;
+}
+
+.lefty {
+  float: left;
+}
+
+.righty {
+  float: right;
+}
+
+
+/* TEXT ELEMENTS
+======================================    */
+
+.green a {
+  font: 900 1.3em "museo-sans", sans-serif;
+  color: #6cc18d;
+  margin: 0.5em 0 0;
+  border-bottom: 2px solid currentColor;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.clockface {
+  font: 400 1em "fontello";
+  color: #919191;
+  display: inline-block;
+  margin: 0.7em 0.5em;
+}
+
+.timer {
+  font: 600 1.1em "museo-sans", sans-serif;
+  color: #919191;
+  display: inline-block;
+  margin: 0.7em 0;
+}
+
+.shoe {
+  width: 2em;
+  height: 2em;
+  vertical-align: middle;
+  display: inline-block;
+  margin: 0 0.5em 0 0;
+}
+
+.dancing {
+  font: 600 0.9em "museo-sans", sans-serif;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.viewmore {
+  font: 600 0.9em "museo-sans", sans-serif;
+  vertical-align: middle;
+  display: inline-block;
+  width: 75px;
+  height: 1em;
+  display: none;
+  margin-right: 0.5em
+}
+
+
+/* SECTION ELEMENTS
+======================================   */
+
+.container {
+  background-color: #fff;
+  padding: 1em;
+  border-radius: 0.7em 0.7em 0 0;
+  color: white;
+  box-shadow: 0 0 3px #888;
+  position: relative;
+  z-index: 1;
+}
+
+.bottom {
+  border-top: 1px #eeeeee solid;
+  padding: 1em;
+  background: #fff;
+  color: #999999;
+  border-radius: 0 0 0.7em 0.7em;
+  box-shadow: 0 2px 5px #888;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.penguin {
+  background: #fff;
+  height: 236px;
+  width: 420px;
+  z-index: 2;
+  position: relative;
+}
+
+.plus {
+  border-right: 0.7em solid #fff;
+  border-bottom: 0.7em solid #fff;
+  background: #f5841f;
+  width: 3.5em;
+  height: 3.5em;
+  border-radius: 0.7em 0.7em 6em;
+  position: absolute;
+  z-index: 3;
+}
+
+.plus span {
+  font: 400 2.8em "Fontello";
+  color: white;
+}
+
+.heart1 {
+  background: white;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none;
+  margin-left: 22.8em;
+  margin-top: 1.1em;
+  padding: 0.7em;
+  position: absolute;
+  text-align: left;
+  z-index: 4;
+}
+
+.heart1 span {
+  font: 400 1.2em "Fontello";
+  color: #999;
+  margin-right: 0.2em;
+  margin-top: 0.2em;
+}
+
+.heart2 span {
+  font: 400 1.2em "Fontello";
+  color: white;
+  margin-right: 0.2em;
+  margin-top: 0.2em;
+}
+
+.heart2 {
+  background: red;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none;
+  position: absolute;
+  text-align: center;
+  margin-left: 22.8em;
+  margin-top: 1.1em;
+  padding: 0.7em;
+  z-index: 4;
+}
+
+.heart2:active,
+.active {
+  background: red;
+  border-radius: 50%;
+  cursor: pointer;
+  display: block;
+  margin-left: 22.8em;
+  margin-top: 1.1em;
+  padding: 0.7em;
+  position: absolute;
+  text-align: center;
+  z-index: 4;
+}
+
+.circle {
+  right: 1.5em;
+  top: 2.1em;
+  position: absolute;
+  border: red 0.4em solid;
+  border-radius: 50%;
+  display: none;
+  height: 2.1em;
+  width: 2.1em;
+  z-index: 10;
+}

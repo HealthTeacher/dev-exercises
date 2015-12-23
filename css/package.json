@@ -10,12 +10,16 @@
     "url": "git+ssh://git@github.com/HealthTeacher/dev-exercises.git"
   },
   "author": "GoNoodle",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/HealthTeacher/dev-exercises/issues"
   },
   "homepage": "https://github.com/HealthTeacher/dev-exercises#readme",
   "devDependencies": {
+    "http-server": "^0.8.5"
+  },
+  "main": "src/index.html",
+  "dependencies": {
     "http-server": "^0.8.5"
   }
 }
