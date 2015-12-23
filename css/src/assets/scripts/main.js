@@ -18,7 +18,7 @@ $(function () {
   $heart1.click(
     function () {
       $heart2.show();
-      $circle.show().hide('puff', { }, 300);
+      $circle.show().hide('puff', {percent:200 }, 400);
     });
   $heart2.click(
     function () {
