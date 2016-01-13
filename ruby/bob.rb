@@ -1,10 +1,11 @@
 class Bob
   def hey(remark)
     @remark = Remark.new(remark)
-    return "Fine. Be that way!" if @remark.is_blank?
-    return "Whoa, chill out!" if @remark.is_shouting?
-    return "Sure." if @remark.is_question?
-    "Whatever."
+    reply = "Whatever."
+    reply = "Sure." if @remark.is_question?
+    reply = "Whoa, chill out!" if @remark.is_shouting?
+    reply = "Fine. Be that way!" if @remark.is_blank?
+    reply
   end
 
 end
@@ -17,15 +18,15 @@ class Remark
   end
 
   def is_question?
-    @remark[-1] == "?"
+    @remark.end_with?('?')
   end
 
   def is_shouting?
-    return false if self.is_only_numbers?
+    return false if self.has_no_words?
     @remark == @remark.upcase
   end
 
-  def is_only_numbers?
+  def has_no_words?
     no_words = /[^a-zA-Z]*[?]*/
     no_words.match(@remark).to_s == @remark
   end
