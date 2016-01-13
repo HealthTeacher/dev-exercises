@@ -12,17 +12,14 @@ var PhoneNumber = function(input) {
     strippedNumber = input.replace(/\W/g, '');
 
     // Switch statement on the length of strippedNumber.
-    switch(true) {
-      case strippedNumber.length < 10:
+    switch(strippedNumber.length) {
+      case 10:
+        break;
+      case 11:
+        strippedNumber = strippedNumber[0]== '1' ? strippedNumber.slice(1) : this.invalidNumber;
+        break;
+      default:
         strippedNumber = this.invalidNumber;
-      case strippedNumber.length == 10:
-        break;
-      case strippedNumber.length == 11:
-        if(strippedNumber[0] == "1")
-          strippedNumber = strippedNumber.slice(1);
-        else
-          strippedNumber = this.invalidNumber;
-        break;
     }
     return strippedNumber;
   };
@@ -31,7 +28,6 @@ var PhoneNumber = function(input) {
   this.areaCode = function() { return this.number().slice(0,3) };
   this.prefix = function() { return this.number().slice(3,6) };
   this.lineNumber = function() { return this.number().slice(6,10) };
-
   this.toString = function() {
     return  "(" + this.areaCode() + ") "
                 + this.prefix() + "-"
