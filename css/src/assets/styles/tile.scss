@@ -19,6 +19,7 @@ body {
     left: -55px;
     background-color: #f5841f;
     border: 8px solid #ffffff;
+    // plus icon
     svg {
       position: absolute;
       bottom: 22px;
@@ -29,12 +30,112 @@ body {
       fill: currentColor;
     }
   }
+  .favorite-button {
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    border: 0;
+    background-color: #ededed;
+    opacity: 0;
+    transition: opacity .25s ease-in-out;
+    // maintains pointer over the favorite button
+    &:hover {
+      cursor: pointer;
+    }
+    // making button accessible via tab
+    &:focus {
+      opacity: 1;
+    }
+    // heart icons
+    svg {
+      height: 16px;
+      width: 16px;
+      margin: auto;
+      fill: currentColor;
+      transition: all .25s ease-in-out;
+      // heart outline icon
+      &:nth-child(1) {
+        display: block;
+        color: #919191;
+      }
+      // heart filled icon
+      &:nth-child(2) {
+        display: none;
+        color: #ffffff;
+      }
+    }
+    // red ripple - starting point before it expands or is visable
+    &::after {
+      content: ' ';
+      height: 40px;
+      width: 40px;
+      border-radius: 100%;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      box-shadow: inset 0px 0px 0px 6px #ededed;
+      display: inline-block;
+      opacity: 1;
+    }
+    // class added when the favorite-button is clicked
+    &.favorited {
+      background-color: #eb2225;
+      opacity: 1;
+      animation: bounce .25s .25s;
+      transform: scale(1);
+      @keyframes bounce {
+        50% {transform: scale(1.125);}
+        100% {transform: scale(1);}
+      }
+      // heart outline icon
+      svg:nth-child(1) {
+        display: none;
+      }
+      // heart filled icon
+      svg:nth-child(2) {
+        display: block;
+      }
+      // red ripple - animation
+      &::after {
+        box-shadow: inset 0px 0px 0px 6px #eb2225;
+        height: 75px;
+        width: 75px;
+        top: -18px;
+        right: -18px;
+        opacity: 0;
+        transition: all .4s ease-in-out;
+        transition-property: opacity, top, right, height, width;
+        transition-delay: .2s;
+      }
+    }
+    // class added when button is clicked but removed when keyed to
+    // this exists for accessibility purposes
+    &.button-clicked {
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+  // tile hover
+  &:hover {
+    // makes pointer show up on hover over tile
+    cursor: pointer;
+    // makes the favorite button show up when the tile is hovered over
+    .favorite-button {
+      opacity: 1;
+    }
+  }
+  // main tile image
   > img {
     width: 372px;
     height: 209px;
     vertical-align: bottom;
     margin: 14px 14px 0;
   }
+  // contains the main tile link and length of activity
   .tile-details-bar {
     padding: 10px 14px 16px;
     a {
@@ -44,8 +145,10 @@ body {
       text-decoration: none;
       border-bottom: 2px solid #6cc18d;
     }
-    div {
+    // length of time the activity takes
+    .activity-length {
       float: right;
+      // clock icon
       svg {
         height: 16px;
         width: 16px;
@@ -53,7 +156,9 @@ body {
         color: #919191;
         fill: currentColor;
         vertical-align: middle;
+        margin-top: -2px;
       }
+      // length of time
       span {
         display: inline-block;
         font-size: 16px;
@@ -63,21 +168,42 @@ body {
       }
     }
   }
+  // bottom bar in tile
   .tile-activity-bar {
     border-top: 1px solid #eeeeee;
     padding: 10px 14px 12px;
+    // activity icon
     img {
       display: inline-block;
       vertical-align: middle;
       height: 32px;
       width: 32px;
     }
+    // code for both pieces of text
     span {
       display: inline-block;
+      vertical-align: middle;
       font-size: 15px;
       font-weight: 300;
       color: #999999;
+    }
+    // slide out text (left)
+    .slide-out-text {
+      width: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      transition: width .25s ease-in-out;
+    }
+    // right text
+    .activity-text {
       margin-left: 2px;
+    }
+    // over state the reveals slide out text
+    &:hover {
+      background-color: #fafafa;
+      .slide-out-text{
+        width: 80px;
+      }
     }
   }
 }
