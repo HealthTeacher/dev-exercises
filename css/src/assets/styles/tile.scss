@@ -172,6 +172,9 @@ body {
   .tile-activity-bar {
     border-top: 1px solid #eeeeee;
     padding: 10px 14px 12px;
+    text-decoration: none;
+    display: block;
+    outline-offset: -4px;
     // activity icon
     img {
       display: inline-block;
