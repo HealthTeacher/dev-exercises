@@ -146,7 +146,8 @@ body {
     padding: 10px 14px 12px;
     text-decoration: none;
     display: block;
-    outline-offset: -4px; }
+    outline-offset: -4px;
+    margin: -3px 0; }
     .tile .tile-activity-bar img {
       display: inline-block;
       vertical-align: middle;

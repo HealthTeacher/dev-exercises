@@ -174,7 +174,9 @@ body {
     padding: 10px 14px 12px;
     text-decoration: none;
     display: block;
+    // makes sure accessibility outline isn't cut off
     outline-offset: -4px;
+    margin: -3px 0;
     // activity icon
     img {
       display: inline-block;
