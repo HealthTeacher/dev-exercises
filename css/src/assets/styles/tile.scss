@@ -136,7 +136,7 @@ body {
     margin: 14px 14px 0;
   }
   // contains the main tile link and length of activity
-  .tile-details-bar {
+  .tile-title-bar {
     padding: 10px 14px 16px;
     a {
       font-size: 19px;
@@ -146,7 +146,7 @@ body {
       border-bottom: 2px solid #6cc18d;
     }
     // length of time the activity takes
-    .activity-length {
+    .activity-duration {
       float: right;
       // clock icon
       svg {
@@ -169,7 +169,7 @@ body {
     }
   }
   // bottom bar in tile
-  .tile-activity-bar {
+  .tile-category-bar {
     border-top: 1px solid #eeeeee;
     padding: 10px 14px 12px;
     text-decoration: none;
@@ -200,7 +200,7 @@ body {
       transition: width .25s ease-in-out;
     }
     // right text
-    .activity-text {
+    .category-text {
       margin-left: 2px;
     }
     // over state the reveals slide out text

@@ -117,17 +117,17 @@ body {
     height: 209px;
     vertical-align: bottom;
     margin: 14px 14px 0; }
-  .tile .tile-details-bar {
+  .tile .tile-title-bar {
     padding: 10px 14px 16px; }
-    .tile .tile-details-bar a {
+    .tile .tile-title-bar a {
       font-size: 19px;
       font-weight: 700;
       color: #6cc18d;
       text-decoration: none;
       border-bottom: 2px solid #6cc18d; }
-    .tile .tile-details-bar .activity-length {
+    .tile .tile-title-bar .activity-duration {
       float: right; }
-      .tile .tile-details-bar .activity-length svg {
+      .tile .tile-title-bar .activity-duration svg {
         height: 16px;
         width: 16px;
         display: inline-block;
@@ -135,41 +135,41 @@ body {
         fill: currentColor;
         vertical-align: middle;
         margin-top: -2px; }
-      .tile .tile-details-bar .activity-length span {
+      .tile .tile-title-bar .activity-duration span {
         display: inline-block;
         font-size: 16px;
         color: #919191;
         font-weight: 300;
         margin-right: 8px; }
-  .tile .tile-activity-bar {
+  .tile .tile-category-bar {
     border-top: 1px solid #eeeeee;
     padding: 10px 14px 12px;
     text-decoration: none;
     display: block;
     outline-offset: -4px;
     margin: -3px 0; }
-    .tile .tile-activity-bar img {
+    .tile .tile-category-bar img {
       display: inline-block;
       vertical-align: middle;
       height: 32px;
       width: 32px; }
-    .tile .tile-activity-bar span {
+    .tile .tile-category-bar span {
       display: inline-block;
       vertical-align: middle;
       font-size: 15px;
       font-weight: 300;
       color: #999999; }
-    .tile .tile-activity-bar .slide-out-text {
+    .tile .tile-category-bar .slide-out-text {
       width: 0;
       white-space: nowrap;
       overflow: hidden;
       -webkit-transition: width .25s ease-in-out;
               transition: width .25s ease-in-out; }
-    .tile .tile-activity-bar .activity-text {
+    .tile .tile-category-bar .category-text {
       margin-left: 2px; }
-    .tile .tile-activity-bar:hover {
+    .tile .tile-category-bar:hover {
       background-color: #fafafa; }
-      .tile .tile-activity-bar:hover .slide-out-text {
+      .tile .tile-category-bar:hover .slide-out-text {
         width: 80px; }
 
 /*# sourceMappingURL=tile.css.map */
