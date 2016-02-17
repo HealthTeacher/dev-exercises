@@ -1,0 +1,217 @@
+body {
+  background-color: #f5f5f5;
+}
+.tile {
+  background-color: #ffffff;
+  height: 324px;
+  width: 400px;
+  font-family: "museo-sans", sans-serif;
+  border-radius: 8px;
+  box-shadow: 0px 4px 2px 0px #dedede;
+  overflow: hidden;
+  position: relative;
+  .plus-indicator {
+    height: 100px;
+    width: 100px;
+    border-radius: 100%;
+    position: absolute;
+    top: -55px;
+    left: -55px;
+    background-color: #f5841f;
+    border: 8px solid #ffffff;
+    // plus icon
+    svg {
+      position: absolute;
+      bottom: 22px;
+      right: 22px;
+      height: 16px;
+      width: 16px;
+      color: #ffffff;
+      fill: currentColor;
+    }
+  }
+  .favorite-button {
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    border: 0;
+    background-color: #ededed;
+    opacity: 0;
+    transition: opacity .25s ease-in-out;
+    // maintains pointer over the favorite button
+    &:hover {
+      cursor: pointer;
+    }
+    // making button accessible via tab
+    &:focus {
+      opacity: 1;
+    }
+    // heart icons
+    svg {
+      height: 16px;
+      width: 16px;
+      margin: auto;
+      fill: currentColor;
+      transition: all .25s ease-in-out;
+      // heart outline icon
+      &:nth-child(1) {
+        display: block;
+        color: #919191;
+      }
+      // heart filled icon
+      &:nth-child(2) {
+        display: none;
+        color: #ffffff;
+      }
+    }
+    // red ripple - starting point before it expands or is visable
+    &::after {
+      content: ' ';
+      height: 40px;
+      width: 40px;
+      border-radius: 100%;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      box-shadow: inset 0px 0px 0px 6px #ededed;
+      display: inline-block;
+      opacity: 1;
+    }
+    // class added when the favorite-button is clicked
+    &.favorited {
+      background-color: #eb2225;
+      opacity: 1;
+      animation: bounce .25s .25s;
+      transform: scale(1);
+      @keyframes bounce {
+        50% {transform: scale(1.125);}
+        100% {transform: scale(1);}
+      }
+      // heart outline icon
+      svg:nth-child(1) {
+        display: none;
+      }
+      // heart filled icon
+      svg:nth-child(2) {
+        display: block;
+      }
+      // red ripple - animation
+      &::after {
+        box-shadow: inset 0px 0px 0px 6px #eb2225;
+        height: 75px;
+        width: 75px;
+        top: -18px;
+        right: -18px;
+        opacity: 0;
+        transition: all .4s ease-in-out;
+        transition-property: opacity, top, right, height, width;
+        transition-delay: .2s;
+      }
+    }
+    // class added when button is clicked but removed when keyed to
+    // this exists for accessibility purposes
+    &.button-clicked {
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+  // tile hover
+  &:hover {
+    // makes pointer show up on hover over tile
+    cursor: pointer;
+    // makes the favorite button show up when the tile is hovered over
+    .favorite-button {
+      opacity: 1;
+    }
+  }
+  // main tile image
+  > img {
+    width: 372px;
+    height: 209px;
+    vertical-align: bottom;
+    margin: 14px 14px 0;
+  }
+  // contains the main tile link and length of activity
+  .tile-title-bar {
+    padding: 10px 14px 16px;
+    a {
+      font-size: 19px;
+      font-weight: 700;
+      color: #6cc18d;
+      text-decoration: none;
+      border-bottom: 2px solid #6cc18d;
+    }
+    // length of time the activity takes
+    .activity-duration {
+      float: right;
+      // clock icon
+      svg {
+        height: 16px;
+        width: 16px;
+        display: inline-block;
+        color: #919191;
+        fill: currentColor;
+        vertical-align: middle;
+        margin-top: -2px;
+      }
+      // length of time
+      span {
+        display: inline-block;
+        font-size: 16px;
+        color: #919191;
+        font-weight: 300;
+        margin-right: 8px;
+      }
+    }
+  }
+  // bottom bar in tile
+  .tile-category-bar {
+    border-top: 1px solid #eeeeee;
+    padding: 10px 14px 12px;
+    text-decoration: none;
+    display: block;
+    text-decoration: none;
+    // makes sure accessibility outline isn't cut off
+    outline-offset: -4px;
+    margin: -3px 0;
+    // activity icon
+    img {
+      display: inline-block;
+      vertical-align: middle;
+      height: 32px;
+      width: 32px;
+      text-decoration: none;
+      border: 0px;
+    }
+    // code for both pieces of text
+    span {
+      display: inline-block;
+      vertical-align: middle;
+      font-size: 15px;
+      font-weight: 300;
+      color: #999999;
+    }
+    // slide out text (left)
+    .slide-out-text {
+      width: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      transition: width .25s ease-in-out;
+    }
+    // right text
+    .category-text {
+      margin-left: 2px;
+    }
+    // over state the reveals slide out text
+    &:hover {
+      background-color: #fafafa;
+      .slide-out-text{
+        width: 80px;
+      }
+    }
+  }
+}

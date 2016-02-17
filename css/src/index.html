@@ -3,10 +3,33 @@
   <head>
     <meta charset="utf-8">
     <title>GoNoodle Exercise</title>
+    <script src="https://use.typekit.net/byr3iqp.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <link rel="stylesheet" type="text/css" href="/assets/styles/tile.css"
   </head>
   <body>
-    <p>
-      The server is running!
-    </p>
+    <div class="tile">
+      <div class="plus-indicator">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="-223 25 512 512"><path d="M-207 235c10.2-10.1 23-15.9 38.1-17.6 15.2-1.7 30.5-2.3 45.8-1.7s29.7 0.4 43-0.6c13.3-0.9 22-4.1 26.2-9.4 2.7-3.8 5.2-16 7.7-36.7 2.5-20.7 5.1-41.2 8-61.5 2.8-20.3 10.6-38.9 23.3-55.8S14.8 26.6 36 27c15.2 0.4 27.4 3.6 36.7 9.7 9.3 6.1 15.7 15.1 19.4 27 3.6 12 6 23.5 7.1 34.7 1.1 11.2 2 25.6 2.6 43.3 0.6 17.6 1.6 31.6 3.1 41.8 3.4 20.9 26.8 31.3 70 31.3 41.7 0.4 71 5.4 87.7 15.1 16.7 9.7 25 24.6 25 44.7 0 8.3-0.9 16.1-2.8 23.3 -1.9 7.2-4.2 13.4-6.8 18.5 -2.7 5.1-6.5 9.9-11.7 14.2 -5.1 4.4-9.8 8-13.9 10.8 -4.2 2.8-9.9 5.3-17.1 7.4 -7.2 2.1-13.3 3.8-18.2 5.1 -4.9 1.3-11.8 2.5-20.5 3.4 -8.7 0.9-15.5 1.5-20.2 1.7 -4.7 0.2-11.9 0.6-21.3 1.1 -9.5 0.6-16.1 1-19.9 1.4 -10.6 0-18.4 6.1-23.3 18.2 -4.9 12.1-8.3 26.7-10 43.5 -1.7 16.9-4.1 33.8-7.1 50.7 -3 16.9-10 31-20.8 42.4C63 527.9 47.8 533 28 531.8c-9.1-1.1-17.2-4.3-24.2-9.4 -7-5.1-12.7-12.2-17.1-21.3 -4.4-9.1-8-17.7-10.8-25.9 -2.8-8.2-5-18.7-6.5-31.6 -1.5-12.9-2.6-22.7-3.1-29.3 -0.6-6.6-1-15.7-1.4-27 -0.8-11-7.8-19.2-21.1-24.5 -13.3-5.3-29.1-9-47.5-11.1 -18.4-2.1-36.7-4.8-54.9-8.3 -18.2-3.4-33.6-10.3-46.1-20.8 -12.5-10.4-18.6-25-18.2-43.5C-222.6 259.8-217.3 245.1-207 235z"/></svg>
+      </div>
+      <button id="favorite-button" class="favorite-button" onmousedown="buttonClicked(this)" onkeydown="buttonKeyDown(this)" onkeyup="buttonKeyUp(this, event)" aria-pressed="false">
+        <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="56 -56 512 512"><path d="M530 198L312 424 94 198C44 148 44 67 94 17s131-50 181 0l37 45 37-45c50-50 131-50 181 0s50 131 0 181zM394 62l-82 90-82-90c-25-25-66-25-91 0s-25 65 0 90l173 182 173-182c25-25 25-65 0-90s-66-25-91 0z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="56 -56 512 512"><path d="M530 198L312 424 94 198C44 148 44 67 94 17s131-50 181 0l37 45 37-45c50-50 131-50 181 0s50 131 0 181z"/></svg>
+      </button>
+      <img alt="the penguin song" src="/assets/images/the-penguin-song.png" />
+      <div class="tile-title-bar">
+        <a href="#">The Penguin Song</a>
+        <div class="activity-duration">
+          <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="56 -56 512 512"><path d="M385 319L280 213V72h64v115l87 86-46 46zM312-56C171-56 56 59 56 200s115 256 256 256 256-115 256-256S453-56 312-56zm0 448c-106 0-192-86-192-192S206 8 312 8s192 86 192 192-86 192-192 192z"/></svg>
+          <span aria-label="one minute and twenty eight seconds">1:28</span>
+        </div>
+      </div>
+      <a href="#" class="tile-category-bar">
+        <span class="slide-out-text">View more</span>
+        <img alt="shoe dancing" src="/assets/images/icon-shoe-dancing.svg" />
+        <span class="category-text">Guided Dancing</span>
+      </a>
+    </div>
+    <script src="/assets/scripts/tile.js"></script>
   </body>
 </html>
