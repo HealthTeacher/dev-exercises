@@ -16,6 +16,10 @@
   },
   "homepage": "https://github.com/HealthTeacher/dev-exercises#readme",
   "devDependencies": {
-    "http-server": "^0.8.5"
+    "gulp": "^3.9.1",
+    "gulp-sass": "^2.2.0",
+    "http-server": "^0.8.5",
+    "velocity-animate": "^1.2.3",
+    "velocity-ui-pack": "^1.2.2"
   }
 }
