@@ -291,7 +291,7 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-.cf:after {
+.cf:after, .thumbnail .description:after, .category:after {
   content: '';
   display: table;
   clear: both; }
@@ -313,20 +313,47 @@ svg {
   height: 100%;
   width: 100%; }
 
-body {
-  background-color: #f5f5f5; }
+.sprite__icon-clock:before, .sprite__icon-heart:before, .sprite__icon-plus:before, .sprite__icon-shoe-dancing:before {
+  content: ' ';
+  background-image: url("src/assets/images/spritesheet/sprite.svg");
+  background-repeat: no-repeat;
+  background-size: 103em 103em;
+  display: inline-block; }
 
-.container {
+.sprite__icon-clock:before {
+  background-position: -0.2em -0.2em;
+  width: 51.2em;
+  height: 51.2em; }
+
+.sprite__icon-heart:before {
+  background-position: -51.6em -0.2em;
+  width: 51.2em;
+  height: 51.2em; }
+
+.sprite__icon-plus:before {
+  background-position: -0.2em -51.6em;
+  width: 51.2em;
+  height: 51.2em; }
+
+.sprite__icon-shoe-dancing:before {
+  background-position: -51.6em -51.6em;
+  width: 13.2em;
+  height: 13.2em; }
+
+body {
+  background-color: #f5f5f5;
+  font-family: museo-sans-condensed; }
+
+.tile {
   margin: 3em auto;
   width: 30em; }
 
 .thumbnail {
-  border: 1px solid white;
   padding: .6em;
   background-color: white;
-  border-radius: .3em;
-  box-shadow: 0px 0.2em rgba(0, 0, 0, 0.05);
-  position: relative; }
+  border-radius: 0 .3em 0 0;
+  position: relative;
+  cursor: pointer; }
   .thumbnail-plus {
     position: absolute;
     background-color: white;
@@ -334,9 +361,157 @@ body {
     height: 4em;
     border-radius: 0 0 10em;
     top: 0;
-    left: 0; }
+    left: 0;
+    padding: 0 0.3em 0.3em 0; }
+    .thumbnail-plus .svg-container {
+      background: #f5841f;
+      border-radius: 0 0 10em;
+      height: 3.5em;
+      width: 3.5em; }
+    .thumbnail-plus .icon-plus {
+      fill: #FFFFFF;
+      height: 2em;
+      width: 2em;
+      font-size: 1.25em;
+      position: relative;
+      top: 0.2em;
+      left: 0.2em; }
+  .thumbnail-heart {
+    display: none;
+    position: absolute;
+    background-color: white;
+    width: 3.5em;
+    height: 3.5em;
+    border-radius: 10em;
+    top: 1em;
+    right: 1em;
+    padding: 0; }
+    .thumbnail-heart .icon-heart {
+      width: 3em;
+      height: 3em;
+      margin: 1.8em auto;
+      font-size: 0.5em;
+      fill: white;
+      display: block;
+      stroke: black;
+      stroke-width: 2em; }
+    .thumbnail-heart .click-effect {
+      display: none;
+      width: 2em;
+      height: 2em;
+      background: transparent;
+      border-radius: 10em;
+      font-size: 2em;
+      border: 0.1em solid red;
+      position: absolute;
+      top: -0.1em;
+      left: -0.1em; }
   .thumbnail-image {
     background-image: url("../../images/the-penguin-song.png");
     width: 100%;
     height: 16.1em;
     background-size: cover; }
+  .thumbnail .description {
+    padding: 0 0 0.7em; }
+    .thumbnail .description .title {
+      display: block;
+      float: left;
+      color: #6cc18d;
+      font-size: 1.8em;
+      font-weight: bold;
+      border-bottom: 0.1em solid #6cc18d;
+      padding-bottom: 0.05em; }
+    .thumbnail .description .duration {
+      display: block;
+      float: right;
+      position: relative;
+      font-size: 1.5em;
+      padding: 0.3em 0 0;
+      margin-right: 0.5em;
+      color: #919191; }
+      .thumbnail .description .duration .icon-clock {
+        position: absolute;
+        height: 1em;
+        width: 1em;
+        right: 1.9em;
+        font-size: 0.9em;
+        top: 0.5em;
+        fill: #919191; }
+
+.category {
+  padding: 0em;
+  border-top: 1px solid #919191;
+  background-color: #FFFFFF;
+  box-shadow: 0px 0.2em rgba(0, 0, 0, 0.05);
+  border-radius: 0 0 .3em .3em;
+  position: relative;
+  cursor: pointer; }
+  .category .view-more {
+    float: left;
+    margin: 0.7em;
+    font-size: 1.4em;
+    color: #919191; }
+  .category .dancing-shoe {
+    display: block;
+    position: absolute;
+    font-size: 1.2em;
+    padding: 0 0 0 2em;
+    margin: 0.8em 0.5em 0;
+    background-color: #FFFFFF;
+    left: 0.4em;
+    color: #919191; }
+    .category .dancing-shoe .icon-shoe-dancing {
+      position: absolute;
+      height: 1em;
+      width: 1em;
+      right: 3.3em;
+      font-size: 1.9em;
+      bottom: -0.2em; }
+
+.responsive-button,
+.javascript-button {
+  display: block;
+  margin: 0 auto;
+  border: 1px solid #919191;
+  padding: 1em;
+  font-size: 1.4em;
+  background: cadetblue; }
+
+.grid {
+  display: none;
+  max-width: 80em;
+  margin-left: auto;
+  margin-right: auto; }
+  .grid:after {
+    content: " ";
+    display: block;
+    clear: both; }
+  .grid .tile {
+    width: 49.45055%;
+    float: left;
+    margin-right: 1.0989%;
+    font-size: 1.35em;
+    margin-bottom: 1em; }
+    .grid .tile:nth-child(2n + 2) {
+      float: right;
+      margin-right: 0; }
+  .grid .grid-description {
+    display: block;
+    clear: both;
+    font-size: 2em; }
+
+.javascript-button {
+  margin: 3em auto; }
+
+.test-container-wordcount {
+  margin: 0 auto;
+  display: none;
+  width: 30em;
+  font-size: 2em;
+  background-color: wheat;
+  padding: 1em;
+  box-shadow: 0.2em 0.2em 0.2em rgba(0, 0, 0, 0.05);
+  border-radius: .3em; }
+  .test-container-wordcount input {
+    display: block;
+    font-size: 2em; }

@@ -3,24 +3,153 @@
   <head>
     <meta charset="utf-8">
     <title>GoNoodle Exercise</title>
+    <script src="https://use.typekit.net/bfm1lkv.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
     <link href="/assets/styles/css/app.css" rel="stylesheet">
   </head>
   <body>
-    <div class='container'>
+    <div class='tile'>
+
       <section class='thumbnail'>
+
         <div class='thumbnail-plus'>
-          <svg>
-            <use xlink:href="/assets/images/icon-plus.svg#plus"></use>
+          <div class='svg-container'>
+          <svg class='icon-plus'>
+            <use xlink:href="/assets/images/spritesheet/sprite.svg#icon-plus"></use>
           </svg>
+          </div>
+        </div>
+
+        <div class='thumbnail-heart'>
+            <svg class='icon-heart'>
+              <use xlink:href="/assets/images/spritesheet/sprite.svg#icon-heart"></use>
+            </svg>
+            <div class='click-effect'></div>
         </div>
         <div class='thumbnail-image'></div>
 
+        <div class='description'>
+          <h4 class='title'>The Penguin Song</h4>
+          <p class='duration'>1:28<svg class='icon-clock'>
+            <use xlink:href="/assets/images/spritesheet/sprite.svg#icon-clock"></use>
+          </svg></p>
+        </div>
+
+
       </section>
-    </div>
+
+      <div class='category'>
+        <h4 class='view-more'>view more</h4>
+        <p class='dancing-shoe'>Guided Dancing<svg class='icon-shoe-dancing'>
+          <use xlink:href="/assets/images/spritesheet/sprite.svg#icon-shoe-dancing"></use>
+        </svg></p>
+      </div>
+    </div><!-- end of single tile  -->
+
+    <button class='responsive-button'>Click for Responsive Grid</button>
+
+    <section class='grid'>
+      <!-- tile #1  -->
+      <div class='tile'>
+
+        <section class='thumbnail'>
+
+          <div class='thumbnail-plus'>
+            <div class='svg-container'>
+            <svg class='icon-plus'>
+              <use xlink:href="/assets/images/spritesheet/sprite.svg#icon-plus"></use>
+            </svg>
+            </div>
+          </div>
+
+          <div class='thumbnail-heart'>
+              <svg class='icon-heart'>
+                <use xlink:href="/assets/images/spritesheet/sprite.svg#icon-heart"></use>
+              </svg>
+              <div class='click-effect'></div>
+          </div>
+          <div class='thumbnail-image'></div>
+
+          <div class='description'>
+            <h4 class='title'>The Penguin Song</h4>
+            <p class='duration'>1:28<svg class='icon-clock'>
+              <use xlink:href="/assets/images/spritesheet/sprite.svg#icon-clock"></use>
+            </svg></p>
+          </div>
+
+
+        </section>
+
+        <div class='category'>
+          <h4 class='view-more'>view more</h4>
+          <p class='dancing-shoe'>Guided Dancing<svg class='icon-shoe-dancing'>
+            <use xlink:href="/assets/images/spritesheet/sprite.svg#icon-shoe-dancing"></use>
+          </svg></p>
+        </div>
+      </div><!-- end of tile #1  -->
+
+      <!-- tile #2  -->
+      <div class='tile'>
+
+        <section class='thumbnail'>
+
+          <div class='thumbnail-plus'>
+            <div class='svg-container'>
+            <svg class='icon-plus'>
+              <use xlink:href="/assets/images/spritesheet/sprite.svg#icon-plus"></use>
+            </svg>
+            </div>
+          </div>
+
+          <div class='thumbnail-heart'>
+              <svg class='icon-heart'>
+                <use xlink:href="/assets/images/spritesheet/sprite.svg#icon-heart"></use>
+              </svg>
+              <div class='click-effect'></div>
+          </div>
+          <div class='thumbnail-image'></div>
+
+          <div class='description'>
+            <h4 class='title'>The Penguin Song</h4>
+            <p class='duration'>1:28<svg class='icon-clock'>
+              <use xlink:href="/assets/images/spritesheet/sprite.svg#icon-clock"></use>
+            </svg></p>
+          </div>
+
+
+        </section>
+
+        <div class='category'>
+          <h4 class='view-more'>view more</h4>
+          <p class='dancing-shoe'>Guided Dancing<svg class='icon-shoe-dancing'>
+            <use xlink:href="/assets/images/spritesheet/sprite.svg#icon-shoe-dancing"></use>
+          </svg></p>
+        </div>
+      </div><!-- end of tile #2  -->
+
+      <h1 class='grid-description'>Just for demonstration purposes let's use a scalable layout instead of the classic fluid layout. Resizing the screen keeps the proportion of the elements.</h1>
+
+    </section><!-- end of susy2 grid  -->
+
+    <button class='javascript-button'>Click for javascript tests</button>
+
+    <section class='test-container-wordcount'>
+      <h4 class='title'>WORDCOUNT</h4>
+      <p>please insert a word and press enter</p>
+      <input class='wordcount-input' type="text">
+      <div class='solution'></div>
+    </section>
+
+
     <script src="/assets/scripts/jquery.min.js"></script>
+    <script src="/assets/scripts/fittext.js"></script>
+    <script src="/assets/scripts/responsive.js"></script>
     <script src="/assets/scripts/velocity.min.js"></script>
     <script src="/assets/scripts/velocity.ui.min.js"></script>
+    <script src="/assets/scripts/svg4everybody.js"></script>
+
     <script src="/assets/scripts/app.js"></script>
+    <script src="/assets/scripts/wordcount.js"></script>
 
   </body>
 </html>
