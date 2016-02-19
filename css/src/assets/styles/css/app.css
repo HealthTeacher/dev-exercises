@@ -455,8 +455,8 @@ body {
     display: block;
     position: absolute;
     font-size: 1.2em;
-    padding: 0 0 0 2em;
-    margin: 0.8em 0.5em 0;
+    padding: 0 0 0.5em 2em;
+    margin: 0.8em 0.5em 1em;
     background-color: #FFFFFF;
     left: 0.4em;
     color: #919191; }
@@ -466,7 +466,7 @@ body {
       width: 1em;
       right: 3.3em;
       font-size: 1.9em;
-      bottom: -0.2em; }
+      bottom: 0.1em; }
 
 .responsive-button,
 .javascript-button {
