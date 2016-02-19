@@ -9,6 +9,9 @@ $(function() {
     }else{
       $(this).addClass('open').text('Hide javascript tests');
       $('.test-container-wordcount, .test-container-leapyear').velocity('transition.expandIn', {duration: 300});
+      setTimeout(function(){
+        $('.wordcount-input').focus();
+      }, 500);
     }
   });
 
