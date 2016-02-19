@@ -185,8 +185,9 @@ body{
 .javascript-button{
   margin: 3em auto;
 }
-.test-container-wordcount{
-  margin: 0 auto;
+.test-container-wordcount,
+.test-container-leapyear{
+  margin: 0 auto 2em;
     display: none;
     width: 30em;
     font-size: 2em;

@@ -5,18 +5,18 @@ $(function() {
     if($(this).hasClass('open')){
       $(this).removeClass('open').text('Click for javascript tests');
       // $('.responsive-button').text("Hide Responsive Grid");
-      $('.test-container-wordcount').velocity('transition.expandOut', {duration: 300});
+      $('.test-container-wordcount, .test-container-leapyear').velocity('transition.expandOut', {duration: 300});
     }else{
       $(this).addClass('open').text('Hide javascript tests');
-      $('.test-container-wordcount').velocity('transition.expandIn', {duration: 300});
+      $('.test-container-wordcount, .test-container-leapyear').velocity('transition.expandIn', {duration: 300});
     }
   });
 
   Array.prototype.remove = function() {
-    var what, a = arguments, L = a.length, ax;
+    var k, arr = arguments, L = arr.length, ax;
     while (L && this.length) {
-      what = a[--L];
-      while ((ax = this.indexOf(what)) !== -1) {
+      k = arr[--L];
+      while ((ax = this.indexOf(k)) !== -1) {
         this.splice(ax, 1);
       }
     }
@@ -25,7 +25,6 @@ $(function() {
 
   function wordCount(str){
     var array = str.split(' ');
-    console.log(array);
     //loop through array
     var count,
         length = array.length;
@@ -48,11 +47,13 @@ $(function() {
 
   $(".wordcount-input").keypress(function(e) {
     if(e.which == 13) {
-      $('.solution p').remove();
+      $('.test-container-wordcount .solution p').remove();
       var str = $('.wordcount-input').val();
       wordCount(str);
     }
   });
+
+
 
 
 });
