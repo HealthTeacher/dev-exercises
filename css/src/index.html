@@ -3,10 +3,85 @@
   <head>
     <meta charset="utf-8">
     <title>GoNoodle Exercise</title>
+    <script type="text/javascript" src="/assets/scripts/index.js"></script>
+  <link rel="stylesheet" type="text/css" href="/assets/styles/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="/assets/styles/index.css">
   </head>
   <body>
-    <p>
-      The server is running!
-    </p>
+    <div class="col-md-12">
+      <h1 class="text-center">Grid by 1</h1>
+      <div class="col-md-4 col-md-offset-4">
+        <div class="container-video">
+          <button class="btn-top-lt-corner" tabindex="1" onclick="$scope.addVid()"><img src="assets/images/icon-plus.svg" class="icon-plus" alt="Add The Penguin Song" /></button>
+          <button class="btn-top-rt-corner" tabindex="2" onclick="$scope.addFav(true, this)"><img src="assets/images/icon-heart-outline.svg" class="icon-heart-outline" alt="Make The Penguin Song a favorite" /><span class="btn-top-rt-corner-outline"></span></button>
+          <img src="assets/images/the-penguin-song.png" class="img-video" alt="Thumbnail of The Penguin Song" />
+          <a href="javascript:$scope.playVid()" class="video-title" tabindex="3">The Penguin Song</a>
+          <div class="video-time"> 1:23</div>
+          <img src="assets/images/icon-clock.svg" class="icon-clock" alt="The Time of The Penguine Song " />
+          <a class="btn-bottom" onmouseleave="$scope.btnBtmMouseOut(this)" tabindex="4"><div class="btn-bottom-view-more" onclick="$scope.btnViewMore()">View more</div><div class="btn-bottom-transform"><img src="assets/images/icon-shoe-dancing.svg" class="icon-shoe-dancing" alt="View more like The Penguin Song" /><span class="btn-bottom-txt">Guided Dancing</span></div></a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <h1 class="text-center">Grid by .5</h1>
+      <div class="col-md-4 col-md-offset-2">
+        <div class="container-video">
+          <button class="btn-top-lt-corner" tabindex="1" onclick="$scope.addVid()"><img src="assets/images/icon-plus.svg" class="icon-plus" alt="Add The Penguin Song" /></button>
+          <button class="btn-top-rt-corner" tabindex="2" onclick="$scope.addFav(true, this)"><img src="assets/images/icon-heart-outline.svg" class="icon-heart-outline" alt="Make The Penguin Song a favorite" /><span class="btn-top-rt-corner-outline"></span></button>
+          <img src="assets/images/the-penguin-song.png" class="img-video" alt="Thumbnail of The Penguin Song" />
+          <a href="javascript:$scope.playVid()" class="video-title" tabindex="3">The Penguin Song</a>
+          <div class="video-time"> 1:23</div>
+          <img src="assets/images/icon-clock.svg" class="icon-clock" alt="The Time of The Penguine Song " />
+          <a class="btn-bottom" onmouseleave="$scope.btnBtmMouseOut(this)" tabindex="4"><div class="btn-bottom-view-more" onclick="$scope.btnViewMore()">View more</div><div class="btn-bottom-transform"><img src="assets/images/icon-shoe-dancing.svg" class="icon-shoe-dancing" alt="View more like The Penguin Song" /><span class="btn-bottom-txt">Guided Dancing</span></div></a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="container-video">
+          <button class="btn-top-lt-corner" tabindex="1" onclick="$scope.addVid()"><img src="assets/images/icon-plus.svg" class="icon-plus" alt="Add The Penguin Song" /></button>
+          <button class="btn-top-rt-corner" tabindex="2" onclick="$scope.addFav(true, this)"><img src="assets/images/icon-heart-outline.svg" class="icon-heart-outline" alt="Make The Penguin Song a favorite" /><span class="btn-top-rt-corner-outline"></span></button>
+          <img src="assets/images/the-penguin-song.png" class="img-video" alt="Thumbnail of The Penguin Song" />
+          <a href="javascript:$scope.playVid()" class="video-title" tabindex="3">The Penguin Song</a>
+          <div class="video-time"> 1:23</div>
+          <img src="assets/images/icon-clock.svg" class="icon-clock" alt="The Time of The Penguine Song " />
+          <a class="btn-bottom" onmouseleave="$scope.btnBtmMouseOut(this)" tabindex="4"><div class="btn-bottom-view-more" onclick="$scope.btnViewMore()">View more</div><div class="btn-bottom-transform"><img src="assets/images/icon-shoe-dancing.svg" class="icon-shoe-dancing" alt="View more like The Penguin Song" /><span class="btn-bottom-txt">Guided Dancing</span></div></a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <h1 class="text-center">Grid by .33</h1>
+      <div class="col-md-4 col-md-offset">
+      	<div class="container-video">
+      		<button class="btn-top-lt-corner" tabindex="1" onclick="$scope.addVid()"><img src="assets/images/icon-plus.svg" class="icon-plus" alt="Add The Penguin Song" /></button>
+      		<button class="btn-top-rt-corner" tabindex="2" onclick="$scope.addFav(true, this)"><img src="assets/images/icon-heart-outline.svg" class="icon-heart-outline" alt="Make The Penguin Song a favorite" /><span class="btn-top-rt-corner-outline"></span></button>
+      		<img src="assets/images/the-penguin-song.png" class="img-video" alt="Thumbnail of The Penguin Song" />
+      		<a href="javascript:$scope.playVid()" class="video-title" tabindex="3">The Penguin Song</a>
+      		<div class="video-time"> 1:23</div>
+      		<img src="assets/images/icon-clock.svg" class="icon-clock" alt="The Time of The Penguine Song " />
+      		<a class="btn-bottom" onmouseleave="$scope.btnBtmMouseOut(this)" tabindex="4"><div class="btn-bottom-view-more" onclick="$scope.btnViewMore()">View more</div><div class="btn-bottom-transform"><img src="assets/images/icon-shoe-dancing.svg" class="icon-shoe-dancing" alt="View more like The Penguin Song" /><span class="btn-bottom-txt">Guided Dancing</span></div></a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="container-video">
+          <button class="btn-top-lt-corner" tabindex="1" onclick="$scope.addVid()"><img src="assets/images/icon-plus.svg" class="icon-plus" alt="Add The Penguin Song" /></button>
+          <button class="btn-top-rt-corner" tabindex="2" onclick="$scope.addFav(true, this)"><img src="assets/images/icon-heart-outline.svg" class="icon-heart-outline" alt="Make The Penguin Song a favorite" /><span class="btn-top-rt-corner-outline"></span></button>
+          <img src="assets/images/the-penguin-song.png" class="img-video" alt="Thumbnail of The Penguin Song" />
+          <a href="javascript:$scope.playVid()" class="video-title" tabindex="3">The Penguin Song</a>
+          <div class="video-time"> 1:23</div>
+          <img src="assets/images/icon-clock.svg" class="icon-clock" alt="The Time of The Penguine Song " />
+          <a class="btn-bottom" onmouseleave="$scope.btnBtmMouseOut(this)" tabindex="4"><div class="btn-bottom-view-more" onclick="$scope.btnViewMore()">View more</div><div class="btn-bottom-transform"><img src="assets/images/icon-shoe-dancing.svg" class="icon-shoe-dancing" alt="View more like The Penguin Song" /><span class="btn-bottom-txt">Guided Dancing</span></div></a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="container-video">
+          <button class="btn-top-lt-corner" tabindex="1" onclick="$scope.addVid()"><img src="assets/images/icon-plus.svg" class="icon-plus" alt="Add The Penguin Song" /></button>
+          <button class="btn-top-rt-corner" tabindex="2" onclick="$scope.addFav(true, this)"><img src="assets/images/icon-heart-outline.svg" class="icon-heart-outline" alt="Make The Penguin Song a favorite" /><span class="btn-top-rt-corner-outline"></span></button>
+          <img src="assets/images/the-penguin-song.png" class="img-video" alt="Thumbnail of The Penguin Song" />
+          <a href="javascript:$scope.playVid()" class="video-title" tabindex="3">The Penguin Song</a>
+          <div class="video-time"> 1:23</div>
+          <img src="assets/images/icon-clock.svg" class="icon-clock" alt="The Time of The Penguine Song " />
+          <a class="btn-bottom" onmouseleave="$scope.btnBtmMouseOut(this)" tabindex="4"><div class="btn-bottom-view-more" onclick="$scope.btnViewMore()">View more</div><div class="btn-bottom-transform"><img src="assets/images/icon-shoe-dancing.svg" class="icon-shoe-dancing" alt="View more like The Penguin Song" /><span class="btn-bottom-txt">Guided Dancing</span></div></a>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
