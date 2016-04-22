@@ -1,52 +1,55 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8">
     <title>GoNoodle Exercise</title>
     <link rel="stylesheet" type="text/css" href="../assets/styles/app.css"/>
     <script src="https://use.typekit.net/sdv2xfx.js"></script>
-    <script>try{Typekit.load({ async: true });}catch(e){}</script>
-      <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-  
-  <script type="text/javascript">
-$( document ).ready(function() {
-    $("#viewMore").hide();
+    <script>try {
+        Typekit.load({async: true});
+    } catch (e) {
+    }</script>
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 
-    $("#guided-dancing").mouseover(function(event) {
-	$("#viewMore").show();
-});
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#viewMore").hide();
 
-$("#guided-dancing").mouseout(function(event) {
-	  setTimeout(function() {
-        $("#viewMore").hide();
-      }, 750 );
-	
-});
-});
+            $("#guided-dancing").mouseover(function (event) {
+                $("#viewMore").show();
+            });
 
+            $("#guided-dancing").mouseout(function (event) {
+                setTimeout(function () {
+                    $("#viewMore").hide();
+                }, 750);
 
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="card">
+    <section>
+        <div class="corner"><img width="30" height="30" src="../assets/images/icon-plus.svg"/></div>
 
-  </script>
-  </head>
-  <body>
-  	<div class="card">
-  		<div style="layout:block"class="corner"><img width="30" height="30" src="../assets/images/icon-plus.svg"/></div>
+        <img id="video-background"
+             src="../assets/images/the-penguin-song.png">
+    </section>
 
-    	<img style="border-top-left-radius: 95px; margin: 10px; position: relative; top: -50px; left: 0px;z-index: 1"src="../assets/images/the-penguin-song.png">
+    <section id="category-section">
+        <span id="category" class="tk-museo-sans">The Penguin Song</span>
+        <span class="tk-museo-sans time">1:28</span>
+        <img class="time" width="15" height="15" src="../assets/images/icon-clock.svg"/>
+    </section>
 
-	<section style="margin-top: -50px; margin-left: 10px;">
-    <span id="category" class="tk-museo-sans">The Penguin Song</span>
-    <span class="tk-museo-sans time">1:28</span>
-    <img class="time" width="15" height="15" src="../assets/images/icon-clock.svg"/> 
-</section>
-
-	<section style="margin-top: 10px; margin-left: 10px;">
-		<span id="viewMore" style="margin-right: 5px;" class="guided-dancing tk-museo-sans">View More</span>
-		<span id="guided-dancing" style="margin-left: 5px;" class="tk-museo-sans guided-dancing">
+    <section id="guided-dancing-section">
+        <span id="viewMore" class="guided-dancing tk-museo-sans">View More</span>
+		<span id="guided-dancing" class="tk-museo-sans guided-dancing">
 		<img width="25" height="25" src="../assets/images/icon-shoe-dancing.svg">
     Guided Dancing</span>
-</section>
+    </section>
 </div>
-  </body>
+</body>
 </html>

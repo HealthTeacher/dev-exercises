@@ -1,19 +1,19 @@
 var Util = require('../lib/util');
 Util = new Util();
 
-var PhoneNumber = function(phoneNumber) {
-    
-    if(Util.isNullOrWhiteSpace(phoneNumber))
+var PhoneNumber = function(phoneNumber)
+{
+    if(!Util.isSomething(phoneNumber) || Util.isEmptyOrWhiteSpace(phoneNumber))
     {
       this.phoneNumber = "0000000000";
       return;
-    };
+    }
 
-    this.phoneNumber = this.cleanNumber(phoneNumber);
+    this.phoneNumber = this.sanitizePhoneNumber(phoneNumber);
     this.phoneNumber = this.stripLeadingOne(this.phoneNumber);
 };
 
-PhoneNumber.prototype.cleanNumber = function(str)
+PhoneNumber.prototype.sanitizePhoneNumber = function(str)
 {
     return str.replace(/[^\d]/gm, "");
 };
@@ -24,7 +24,6 @@ PhoneNumber.prototype.areaCode = function()
   {
     return this.phoneNumber.substring(0,3);
   }
-
 };
 
 PhoneNumber.prototype.toString = function()
@@ -38,13 +37,14 @@ PhoneNumber.prototype.toString = function()
       areaCode = this.phoneNumber.substring(0, 3);
       firstThreeDigits = this.phoneNumber.substring(3,6);
       lastFourDigits = this.phoneNumber.substring(6,10);
+
       return "(" + areaCode + ")" + " " + firstThreeDigits + "-" + lastFourDigits;
    }
 
    if(this.phoneNumber == 7)
    {
      firstThreeDigits = this.phoneNumber.substring(0,3);
-     lastFourDigits = this.phoneNumber.substring(3,6)
+     lastFourDigits = this.phoneNumber.substring(3,6);
 
      return firstThreeDigits + "-" + lastFourDigits;
    }
@@ -60,7 +60,7 @@ PhoneNumber.prototype.stripLeadingOne = function(str)
   }
 
   return str;
-}
+};
 
 PhoneNumber.prototype.isValidLength = function()
 {

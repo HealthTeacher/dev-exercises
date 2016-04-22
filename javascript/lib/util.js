@@ -11,15 +11,12 @@ Util.prototype.isSomething = function(obj)
    {
    	return false;
    }
+
+    return true;
 };
 
-Util.prototype.isNullOrWhiteSpace = function(str)
+Util.prototype.isEmptyOrWhiteSpace = function(str)
 {
-
-   if(typeof(str) !== "string")
-   {
-   }
-
    if(str === "" || str === " ")
    {
    	return true;
@@ -28,33 +25,24 @@ Util.prototype.isNullOrWhiteSpace = function(str)
    return false;
 };
 
-Util.prototype.isNumber = function(num)
-{
-  if(num === null)
-  {
-    return false;
-  }
+Util.prototype.isNumber = function(num) {
 
-  if(typeof(num) === "undefined")
-  {
-  	return false;
-  }
+    if(isNaN(num))
+    {
+        return false;
+    }
 
-  if(typeof(num) !== number)
-  {
-  	return false;
-  }
+    if (typeof(num) !== "number")
+    {
+        return false;
+    }
+
+    return true;
 };
 
-Util.prototype.isPositiveNumber(num)
+Util.prototype.isPositiveNumber = function(num)
 {
-  if(this.isNumber(num) && num >= 0)
-  {
-  	return true;
-  }
-
-  return false;
-}
-
+  return num >= 0;
+};
 
 module.exports = Util;
