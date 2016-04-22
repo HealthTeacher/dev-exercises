@@ -1,11 +1,8 @@
-# JavaScript
 
-Choose 2 of the 3 exercises listed below from Exercism.io:
+Created lib for handing basic utlities such as null and type checking. Could expand on this work by breaking the utilities out by type and adding to them.
 
-1. [Leap](http://exercism.io/exercises/javascript/leap/readme)
-2. [Phone Number](http://exercism.io/exercises/javascript/phone-number/readme)
-3. [Word Count](http://exercism.io/exercises/javascript/word-count/readme)
+The PhoneNumber object has some basic functionality for sanitizing phone numbers but could be expanded on.
 
-Place your solution for each exercise in this directory. You do **NOT** need to include the spec file, just your solution.
+The Leap year object could be converted into a date/time utility with additional functionality.
 
-_NOTE: You will need to create an Exercism.io account_
+This pull request gives us some basic functionality that we can build on.
