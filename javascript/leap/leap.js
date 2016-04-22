@@ -1,3 +1,6 @@
+var Util = require('../lib/util');
+Util = new Util();
+
 var Leap = function(year) {
     this.year = year;
 };
