@@ -1,11 +1,8 @@
 # JavaScript
 
-Choose 2 of the 3 exercises listed below from Exercism.io:
+Thanks for the opportunity to work on these dev projects, it was an interesting exercise. I completed the following items:
 
 1. [Leap](http://exercism.io/exercises/javascript/leap/readme)
 2. [Phone Number](http://exercism.io/exercises/javascript/phone-number/readme)
-3. [Word Count](http://exercism.io/exercises/javascript/word-count/readme)
-
-Place your solution for each exercise in this directory. You do **NOT** need to include the spec file, just your solution.
 
 _NOTE: You will need to create an Exercism.io account_
