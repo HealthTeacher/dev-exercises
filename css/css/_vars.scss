@@ -1,0 +1,37 @@
+//vars
+$spacer-unit: 10px;
+
+//colors
+$colors: (
+    background          : #f5f5f5,
+    brand-green         : #6cc18d,
+    brand-gray-dark     : #69787a,
+    brand-gray-light    : #919191,
+    brand-gray-xlight   : #999,
+    brand-orange        : #f5841f,
+    brand-red           : #eb2226
+);
+
+/* z-indexes */
+$layers: (
+	popupBox:7000,
+	aboveNav:6000,
+	nav: 5000,
+	subnav: 4000,
+	moduleControls: 2000,
+	topContent:1050
+);
+
+/* font sizes */
+$fontSize: (
+	headline: 1.75rem,
+	title: 1.25rem,
+	body: 1rem,
+    bodyMinus: 0.9375rem,
+	instruct: 0.75rem
+);
+
+$times: (
+    hover: 0.3s,
+    transition: 0.5s
+);
