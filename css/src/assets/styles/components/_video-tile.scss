@@ -1,0 +1,67 @@
+.video-tile {
+  position: relative;
+  background-color: $color-white;
+  max-width: 400px;
+  border-radius: 6px;
+  margin: 2rem;
+  overflow: hidden;
+}
+
+.video-tile__add {
+  position: absolute;
+  top: -3.2rem;
+  left: -3.2rem;
+  background-color: $color-orange;
+  width: 7rem;
+  height: 7rem;
+  border-radius: 100%;
+  border: 0.6rem solid $color-white;
+  z-index: 5;
+}
+
+.video-tile__add-icon {
+  position: absolute;
+  right: 0.5rem;
+  bottom: 0.5rem;
+  color: $color-white;
+  font-size: 3.6rem;
+}
+
+.video-tile__video {
+  margin: 1rem;
+  max-width: calc(100% -  2rem);
+}
+
+.video-tile__details {
+  padding-right: 1rem;
+  padding-bottom: 1.5rem;
+  padding-left: 1rem;
+  border-bottom: 1px solid $color-smoke;
+  overflow: auto;
+}
+
+.video-tile__heading {
+  float: left;
+  font-size: 1.6rem;
+  color: $color-green;
+}
+
+.video-tile__time {
+ float: right;
+ font-size: 1.4rem;
+ color: $color_grey__dark;
+}
+
+.video-tile__clock-icon {
+  font-size: 1.4rem;
+  vertical-align: middle;
+}
+
+.video-tile__tags {
+  color: $color_grey;
+  padding: 1rem;
+}
+
+.video-tile__shoe-icon {
+  font-size: 3rem;
+}
