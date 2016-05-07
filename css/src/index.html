@@ -2,7 +2,10 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GoNoodle Exercise</title>
+    <script src="https://use.typekit.net/job4lny.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
     <link rel="stylesheet" href="assets/styles/default.css" type="text/css">
   </head>
   <body>
@@ -36,13 +39,14 @@
           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-plus"></use>
         </svg>
       </a>
-      <div class="video-tile__favorite"></div>
-      <video class="video-tile__video" poster="assets/images/the-penguin-song.png">
-        <source src="#.mp4" type="video/mp4">
-        <source src="#.ogv" type="video/ogg">
-        <source src="#.webm" type="video/webm">
-        Your browser doesn't support HTML5 video tag.
-      </video>
+      <a class="video-tile__link" href="#">
+        <img class="video-tile__video" src="assets/images/the-penguin-song.png" />
+        <div class="video-tile__favorite js-favorite">
+          <svg class="icon video-tile__favorite-icon">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-heart-outline"></use>
+          </svg>
+        </div>
+      </a>
       <div class="video-tile__details">
         <h3 class="video-tile__heading"><a href="#">The Penguin Song</a></h3>
         <span class="video-tile__time">
@@ -52,10 +56,16 @@
           1:28
         </span>
       </div>
-      <div class="video-tile__tags">
-        <svg class="icon video-tile__shoe-icon">
-          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-dancing-shoe"></use>
-        </svg> Guided Dancing</div>
+      <a class="video-tile__tags" href="#">
+        <span class="video-tile__view-more">View More</span>
+        <span class="video-tile__tag">
+          <svg class="icon video-tile__shoe-icon">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-dancing-shoe"></use>
+          </svg>
+          Guided Dancing
+        </span>
+      </a>
     </div>
+    <script src="assets/scripts/tile.js"></script>
   </body>
 </html>

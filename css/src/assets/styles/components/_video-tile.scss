@@ -1,10 +1,15 @@
 .video-tile {
   position: relative;
   background-color: $color-white;
-  max-width: 400px;
   border-radius: 6px;
   margin: 2rem;
+  border: 1px solid $color-smoke;
   overflow: hidden;
+  box-shadow: 0 4px 1px 0 darken($color-smoke, 5%);
+
+  @include bp-at-least($bp__sm) {
+    max-width: 400px;
+  }
 }
 
 .video-tile__add {
@@ -29,7 +34,7 @@
 
 .video-tile__video {
   margin: 1rem;
-  max-width: calc(100% -  2rem);
+  width: calc(100% -  2rem);
 }
 
 .video-tile__details {
@@ -58,10 +63,96 @@
 }
 
 .video-tile__tags {
+  display: block;
   color: $color_grey;
   padding: 1rem;
+  border: 0;
+  border-radius: 0 0 6px 6px;
+  font-size: 1.4rem;
+  width: 100%;
+
+  &:hover {
+    background-color: darken($color-white, 2%);
+  }
+}
+
+.video-tile__view-more,
+.video-tile__tag,
+.video-tile__shoe-icon {
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .video-tile__shoe-icon {
   font-size: 3rem;
 }
+
+.video-tile__favorite {
+  position: absolute;
+  top: 7%;
+  right: 7%;
+  background-color: $color-smoke;
+  color: $color-grey;
+  border-radius: 100%;
+  z-index: 5;
+  opacity: 0;
+  -webkit-transition: opacity 300ms ease-in-out;
+  -moz-transition: opacity 300ms ease-in-out;
+  -o-transition: opacity 300ms ease-in-out;
+  transition: opacity 300ms ease-in-out;
+}
+
+.video-tile__favorite-icon {
+  padding: 1.2rem 1.2rem 1rem;
+  font-size: 1.6rem;
+}
+
+.video-tile__link {
+  border-bottom: 0;
+}
+
+.video-tile__link:hover .video-tile__favorite {
+  opacity: 1;
+}
+
+// Interactions
+.video-tile__tag {
+  background-color: $color-white;
+  -webkit-transform: translateX(-75px);
+  -moz-transform: translateX(-75px);
+  -o-transform: translateX(-75px);
+  transform: translateX(-75px);
+  -webkit-transition: transform 300ms ease-in-out;
+  -moz-transition: transform 300ms ease-in-out;
+  -o-transition: transform 300ms ease-in-out;
+  transition: transform 300ms ease-in-out;
+}
+.video-tile__tags:hover .video-tile__tag{
+  background-color: darken($color-white, 2%);
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -o-transform: translateX(0);
+  transform: translateX(0);
+  -webkit-transition: transform 300ms ease-in-out 300ms;
+  -moz-transition: transform 300ms ease-in-out 300ms;
+  -o-transition: transform 300ms ease-in-out 300ms;
+  transition: transform 300ms ease-in-out 300ms;
+}
+
+.is-favorited {
+  border: none;
+  box-shadow: 0 0 0 0 $color-red;
+  border-radius: 50%;
+  background-color: $color-red;
+  color: $color-white;
+  -webkit-animation: pulse 1.25s cubic-bezier(0.66, 0, 0, 1);
+  -moz-animation: pulse 1.25s cubic-bezier(0.66, 0, 0, 1);
+  -ms-animation: pulse 1.25s cubic-bezier(0.66, 0, 0, 1);
+  animation: pulse 1.25s cubic-bezier(0.66, 0, 0, 1);
+  opacity: 1;
+}
+
+@-webkit-keyframes pulse {to {box-shadow: 0 0 0 20px rgba(232, 76, 61, 0);}}
+@-moz-keyframes pulse {to {box-shadow: 0 0 0 20px rgba(232, 76, 61, 0);}}
+@-ms-keyframes pulse {to {box-shadow: 0 0 0 20px rgba(232, 76, 61, 0);}}
+@keyframes pulse {to {box-shadow: 0 0 0 20px rgba(232, 76, 61, 0);}}
