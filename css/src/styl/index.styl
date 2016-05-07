@@ -1,0 +1,149 @@
+@import 'variables';
+@import 'base';
+@import 'animations';
+
+.tile
+  // We're positioning this tile in the center of the page just for this exercise
+  position absolute
+  transform translate(-50%, -50%)
+
+  background white
+  box-shadow 0 0.25em 0.125em rgba(0, 0, 0, 0.1)
+  left 50%
+  top 50%
+  border-radius 6px
+  overflow hidden
+
+  &:hover
+    .favorite-button-container
+      opacity 1
+
+.tile-info-container
+  overflow hidden
+  padding 0.25em 0
+
+.tile-title
+  float left
+  font-weight 900
+  color $color-green
+  border-bottom 2px solid $color-green
+  padding-bottom: 1px;
+
+.tile-duration
+  float right
+  color $color-dark-gray
+  font-weight 300
+
+.icon-clock
+  display inline-block
+  background url('../images/icon-clock.svg') no-repeat
+  background-size contain
+  width 1em
+  height 1.2em
+  opacity 0.4
+  vertical-align middle
+
+.icon-shoe
+  display inline-block
+  margin-right 0.25em
+  background url('../images/icon-shoe-dancing.svg') no-repeat
+  background-size contain
+  width 2em
+  height 2em
+  vertical-align bottom
+
+.tile-content
+  display block
+  padding 0.7em
+
+  .add
+    position absolute
+    top -4em
+    left -4em
+    width 8em
+    height 8em
+    background $color-orange
+    border: 0.7em solid white
+    border-radius 50%
+    box-sizing border-box
+
+    .icon-plus
+      position absolute
+      bottom 0.7em
+      right 0.7em
+      width: 2.5em
+      color white
+
+.tile-footer
+    padding 0.7em
+    border-top 1px solid #eee
+    transition background $transition-speed-easing
+
+    p
+      margin 0
+      color $color-darker-gray
+      font-size 0.8em
+
+    p > span
+      display inline-block
+      overflow hidden
+      vertical-align middle
+
+    .view-more
+      width 0
+      white-space nowrap
+      transition width $transition-speed-easing
+      transition-delay 0.5s
+
+    &:hover
+      background #f9f9f9
+
+      .view-more
+        width 5.5em
+
+.favorite-button-container
+  position absolute
+  top 1em
+  right 1em
+  padding 0.7em
+  background white
+  border-radius 50%
+  opacity 0
+  transition opacity $transition-speed-easing, background $transition-speed-easing
+  z-index 3
+
+  &:after
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2em;
+    height: 2em;
+    border 3px solid transparent
+    border-radius: 50%;
+    z-index 2
+
+  &.favorited:after
+    animation feedback 0.6s ease-out forwards
+    border-color $color-red
+
+  .favorite-button
+    background url('../images/icon-heart-outline.svg') no-repeat
+    background-size contain
+    width 1em
+    height 1em
+    opacity 0.3
+    z-index 3
+
+  &:hover
+    background $color-offwhite
+
+  &.favorited
+    background $color-red
+    opacity 1
+    animation bounce 0.3s ease-out forwards
+
+    .favorite-button
+      background url('../images/icon-heart.svg') no-repeat
+      background-size contain
+      opacity 1

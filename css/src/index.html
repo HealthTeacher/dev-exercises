@@ -3,10 +3,38 @@
   <head>
     <meta charset="utf-8">
     <title>GoNoodle Exercise</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/styles/index.css" />
   </head>
   <body>
-    <p>
-      The server is running!
-    </p>
+    <div class="tile">
+      <a href="#" class="tile-content">
+        <img src="assets/images/the-penguin-song.png" />
+        <div class="tile-info-container">
+          <span class="tile-title">The Penguin Song</span>
+          <span class="tile-duration"><i class="icon-clock"></i> 1:28</span>
+        </div>
+        <div class="add">
+          <object type="image/svg+xml" class="icon-plus" data="assets/images/icon-plus.svg">+</object>
+        </div>
+        <div class="favorite-button-container">
+          <div class="favorite-button"></div>
+        </div>
+      </a>
+      <div class="tile-footer">
+        <a href>
+          <p>
+            <span class="view-more">View More</span>
+            <span class="icon-shoe"></span>
+            <span>Guided Dancing</span>
+          </p>
+        </a>
+      </div>
+    </div>
+
+    <script src="assets/scripts/goNoodle.js"></script>
+    <script src="https://use.typekit.net/hic2buk.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
   </body>
 </html>

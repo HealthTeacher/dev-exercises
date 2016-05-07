@@ -3,7 +3,9 @@
   "version": "0.0.1",
   "description": "CSS exercise.",
   "scripts": {
-    "start": "http-server ./src -d false"
+    "start": "http-server ./src -d false",
+    "build-css": "stylus ./src/styl/index.styl -o ./src/assets/styles",
+    "watch-css": "stylus ./src/styl/index.styl -o ./src/assets/styles -w"
   },
   "repository": {
     "type": "git",
@@ -16,6 +18,7 @@
   },
   "homepage": "https://github.com/HealthTeacher/dev-exercises#readme",
   "devDependencies": {
-    "http-server": "^0.8.5"
+    "http-server": "^0.8.5",
+    "stylus": "^0.54.5"
   }
 }
