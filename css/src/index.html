@@ -2,11 +2,60 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GoNoodle Exercise</title>
+    <!-- @TODO: concat + minify with build tool -->
+    <link rel="stylesheet" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css" />
+    <link rel="stylesheet" media="screen" href="assets/styles/base.css" />
+    <link rel="stylesheet" media="screen" href="assets/styles/tile.css" />
   </head>
   <body>
-    <p>
-      The server is running!
-    </p>
+    <div class="u-container">
+      <div class="Tile">
+        <div class="Tile-add">
+          <div class="Tile-plusIcon" title="Add Icon"></div>
+        </div>
+        <a href="#" class="Tile-link">
+          <div class="Tile-thumb">
+            <div class="Tile-heart Tile-heart_inactive">
+              <div class="Tile-heartRing"></div>
+              <div class="Tile-heartIcon" title="Heart Icon"></div>
+            </div>
+            <img src="assets/images/the-penguin-song.png"
+                 alt="Penguin Song Thumbnail"
+                 class="Tile-image" />
+          </div>
+          <div class="Tile-title">
+            <h3 class="Tile-titleText">The Penguin Song</h3>
+            <div class="Tile-time">
+              <div class="Tile-timeIcon" title="Time Icon"></div>
+              <span class="Tile-timeText">1:28</span>
+            </div>
+          </div>
+        </a>
+        <div class="Tile-footer">
+          <div class="Tile-button">
+            <span class="Tile-viewMore">View more</span>
+            <div class="Tile-guidedDancing">
+              <div class="Tile-shoeIcon" title="Dancing Shoe Icon"></div>
+              <span class="Tile-guidedDancingText">Guided Dancing</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- @TODO: Handle FOUT -->
+    <script>
+      (function(d) {
+        var config = {
+          kitId: 'ody5fck',
+          scriptTimeout: 3000,
+          async: true
+        },
+        h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+      })(document);
+    </script>
+    <script src="https://code.jquery.com/jquery-1.12.3.min.js" integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ=" crossorigin="anonymous"></script>
+    <script src="assets/scripts/scripts.js"></script>
   </body>
 </html>

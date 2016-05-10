@@ -17,5 +17,8 @@
   "homepage": "https://github.com/HealthTeacher/dev-exercises#readme",
   "devDependencies": {
     "http-server": "^0.8.5"
+  },
+  "dependencies": {
+    "normalize.css": "^4.1.1"
   }
 }
