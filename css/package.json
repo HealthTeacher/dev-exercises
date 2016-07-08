@@ -29,7 +29,6 @@
     "gulp-imagemin": "^2.3.0",
     "gulp-jshint": "^1.11.2",
     "gulp-newer": "^0.5.1",
-    "gulp-pleeease": "^2.0.1",
     "gulp-preprocess": "^1.2.0",
     "gulp-ruby-haml": "0.0.9",
     "gulp-ruby-sass": "^2.0.5",
