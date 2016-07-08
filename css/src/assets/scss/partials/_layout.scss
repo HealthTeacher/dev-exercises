@@ -1,0 +1,21 @@
+#main-content{
+	max-width:400px;
+	width:	100%;
+	margin:	0 auto;
+}
+
+$tilevpad : 14px;
+
+.tile{
+	background:{
+		color: $tilebg;
+	}
+	max-width:	400px - ($tilevpad * 2);
+	
+	padding: 12px $tilevpad 11px;
+	position:	relative;
+	
+	width:	100%;
+
+	@include border-radius(8px);
+}
