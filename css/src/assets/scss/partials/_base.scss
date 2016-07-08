@@ -1,0 +1,21 @@
+.tile{
+	background:{
+		color: $tilebg;
+	}
+	@include border-radius($tileRadius);
+	@include single-box-shadow(0, 7px, 4px, 1px, $tileshadow);
+}
+
+.tilepage{
+	background:{
+		color: $bodybg;
+	}
+}
+
+header{
+	cursor: pointer;
+}
+
+footer{
+	border-top: 1px solid $footborder;
+}

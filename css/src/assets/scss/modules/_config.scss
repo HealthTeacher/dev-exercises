@@ -1,5 +1,46 @@
-.tilepage{
-	background:{
-		color: $bodybg;
-	}
-}
+/**
+ * Colors
+ */
+$bodybg:	#f5f5f5;
+
+$favbg:	#edeef1;
+$favbgactive: #eb2226;
+$favbgdown: #dddddd;
+$favinactive: #757574;
+
+$footborder: #f5f5f5;
+
+$linkdefault: #a6a9ad;
+
+$plusorange:	#f5841f;
+
+$tiletitle: #6cc18d;
+$tileruntime:	#919191;
+$tilecat:	#999;
+$tilebg:	#fff;
+$tileshadow:	#dedede;
+
+$wht: #fff;
+
+/**
+ * Element display settings
+ */
+$baseFontSz: 16px;
+
+$tileVertpad : em(14);
+$tileMaxwidth: em(400);
+$tileRadius: em(8);
+$tileWidth: 100%;
+
+$plusBtnSz: em(60);
+$plusRadius: em(8) 0 em(40) 0;
+$plusBorder: em(8) $wht solid;
+
+$favRadius: 50%;
+
+
+/**
+* Animation settings
+ */
+$transitionFootOver: all 1s ease-out 0.3s;
+$transitionFootOut: all 0.4s;

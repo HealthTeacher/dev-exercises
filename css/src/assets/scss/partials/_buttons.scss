@@ -1,0 +1,49 @@
+.tile{
+	button{
+		font-family: $iconfont;
+		outline: none;
+		-webkit-tap-highlight-color: rgba(0,0,0,0);
+
+		&.add-playlist{
+			@include border-radius($plusRadius);
+
+			background:{
+				color: $plusorange;
+			};
+			border: none;
+			border:{
+				bottom: $plusBorder;
+				right: $plusBorder;
+			}
+			color: $wht;
+		}
+
+		&.favorite{
+			@extend .icon-heart-outline;
+			@include border-radius($favRadius);
+			
+			background: $favbg;
+			border: none;
+			color: $favinactive;
+			visibility: hidden;
+
+			&:active{
+				background: $favbgdown;
+			}
+			&::before{
+				line-height: 0;
+			}
+		}
+	}
+
+	&.favorited{
+		button{
+			&.favorite{
+				@extend .icon-heart;
+				
+				background: $favbgactive;
+				color: $wht;
+			}
+		}
+	}
+}

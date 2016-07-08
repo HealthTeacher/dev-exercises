@@ -1,4 +1,23 @@
+figure{
+	margin: 0;
+}
+
 img{
 	width:	100%;
 	height:	auto;
+}
+
+.category{
+	background-color: $wht;
+	
+	&.dancing-guided{
+		@extend .svg-icon-shoe-dancing;
+		background: {
+			repeat: no-repeat;
+			position: top left;
+		};
+
+		padding: em(7);
+		padding-left: em(37);
+	}
 }

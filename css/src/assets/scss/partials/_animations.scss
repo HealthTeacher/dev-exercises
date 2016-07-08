@@ -1,0 +1,12 @@
+footer{
+	a{
+		span{
+			@include transition($transitionFootOut);
+		}
+		&:hover{
+			span{
+				@include transition($transitionFootOver);
+			}
+		}
+	}
+}

@@ -1,5 +1,41 @@
-.tile{
-	font:{
-		family: $tilefont;
+a{
+	@include user-select(none);
+	
+	color: $linkdefault;
+	text-decoration: none;
+
+	h3 &{
+		border-bottom: 2px solid $tiletitle;
+		color: $tiletitle;
+		padding-bottom: 2px;
 	}
+}
+
+body{
+	font-size: $baseFontSz;
+}
+
+button{
+	font-family: $iconfont;
+}
+
+h3{
+	font-weight: 700;
+}
+
+.ar{
+	text-align: right;
+}
+
+.runtime{
+	color: $tileruntime;
+	
+	&::before{
+		line-height: em(17);
+		vertical-align: middle;
+	}
+}
+
+.tile{
+	font-family: $tilefont;
 }
