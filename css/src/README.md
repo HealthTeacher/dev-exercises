@@ -11,8 +11,12 @@ The test was completed using a combination of Ruby and Node.js tools.
 - A Ruby script is included for use with the Gulp-ruby-haml plugin to mimic the Rails render function.
 - Gems were utilized via Gulp plugins.
 - No jQuery was used to complete this test.
-- CSS3 transitions are used on the footer links.
-- [GSAP](https://greensock.com/) is used to animate the favorite button states and transitions.
+- ~~CSS3 transitions are used on the footer links.~~
+- ~~GSAP is used to animate the favorite button states and transitions.~~
+- After creating the initial pull request I discovered your style guide and refactored styling classification to better align with spec.
+- Additionally, all animations have been converted to CSS3 tweens.
+- [GSAP](https://greensock.com/) is still being used for IE9.  A fallback has been established so that all animations mirror that of modern browsers supporting CSS3 animation functionality.  
+- An additional fallback is in place to inject GSAP from a local source if the CDN load fails.
 
 ### Setup
 Before running the system ensure [Ruby](https://www.ruby-lang.org/en/) is installed on your system and install the following gems:

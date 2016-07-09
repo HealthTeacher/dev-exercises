@@ -5,6 +5,15 @@
 	&:hover{
 		.tile-category{
 			@include transition($transitionFootOver);
+			margin-left: em(90);
+		}
+	}
+}
+
+.ie9 .tile-footer-link{
+	&:hover{
+		.tile-category{
+			margin-left: 0;
 		}
 	}
 }

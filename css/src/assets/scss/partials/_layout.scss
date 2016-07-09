@@ -24,12 +24,6 @@
 	display: block;
 	position: relative;
 	width: $tileWidth;
-
-	&:hover{
-		.tile-category{
-			margin-left: em(90);
-		}
-	}
 }
 
 .tile-info{

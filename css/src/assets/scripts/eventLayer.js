@@ -1,5 +1,5 @@
-//requires tile.js
-//required typekit.js
+//require tile.js
+//require typekit.js
 //
 (function($){
 	$.tile('.tile');
