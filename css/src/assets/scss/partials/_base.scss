@@ -1,15 +1,13 @@
 .page-tile{
-	background:{
-		color: $bodybg;
-	}
+	background-color: $bodybg;
 }
 
 .tile{
-	background:{
-		color: $tilebg;
-	}
 	@include border-radius($tileRadius);
 	@include single-box-shadow(0, 7px, 4px, 1px, $tileshadow);
+
+	background-color: $tilebg;
+	 -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 .tile-header{

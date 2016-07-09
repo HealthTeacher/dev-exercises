@@ -8,3 +8,28 @@
 		}
 	}
 }
+
+.tile-button--favorite{
+	@include transition($transitionFavFade);
+	opacity: 0;
+}
+
+.tile--hovered .tile-button--favorite{
+	opacity: 1;
+}
+
+@include keyframes(tile-favorite-glow){
+	0% {
+		@include box-shadow(0px 0px 0px 0px rgba(235,34,38,1));
+		@include scale(0.86);
+	}
+	100% {
+		@include box-shadow(0px 0px 5px 10px rgba(235,34,38,0));
+		@include scale(1);
+	}
+};
+
+.tile--favorited .tile-button--favorite{
+	animation-duration: 0.3s;
+	animation-name: tile-favorite-glow;
+}
