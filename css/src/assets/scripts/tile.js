@@ -72,7 +72,7 @@
 			
 			setTimeout(function(){
 				if(typeof TweenMax === 'undefined') {
-				 	gsap.src = '/assets/js/vendor/TweenMax.min.js';
+				 	gsap.src = 'assets/js/vendor/TweenMax.min.js';
 					$.addChild($.select('body'), gsap);        		
 	    		}
 				fallback.animations = fallback.getAnimations();
