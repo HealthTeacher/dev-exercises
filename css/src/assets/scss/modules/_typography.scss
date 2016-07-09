@@ -17,7 +17,7 @@ Inlined SVG icons converted to WOFFs to eliminate popping
     font-style: normal;
 }
 
-[class*='icon-']:before{
+.icon-before{
 	display: inline-block;
    font-family: $iconfont;
    font-style: normal;

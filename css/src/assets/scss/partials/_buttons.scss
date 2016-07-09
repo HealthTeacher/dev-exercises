@@ -1,49 +1,56 @@
-.tile{
-	button{
-		font-family: $iconfont;
-		outline: none;
-		-webkit-tap-highlight-color: rgba(0,0,0,0);
+.tile-button{
+	font-family: $iconfont;
+	position: absolute;
+	outline: none;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
 
-		&.add-playlist{
-			@include border-radius($plusRadius);
+.tile-button--add{
+	@extend .tile-button;
+	@extend .icon-plus;
+	@include border-radius($plusRadius);
 
-			background:{
-				color: $plusorange;
-			};
-			border: none;
-			border:{
-				bottom: $plusBorder;
-				right: $plusBorder;
-			}
-			color: $wht;
-		}
+	background-color: $plusorange;
+	border: none;
+	border:{
+		bottom: $plusBorder;
+		right: $plusBorder;
+	}
+	color: $wht;
 
-		&.favorite{
-			@extend .icon-heart-outline;
-			@include border-radius($favRadius);
+	left: 0;
+	top: 0;
+
+	width:	$plusBtnSz;
+	height: $plusBtnSz;
+}
+
+.tile-button--favorite{
+	@extend .tile-button;
+	@extend .icon-heart-outline;
+	@include border-radius($favRadius);
+	
+	background: $favbg;
+	border: none;
+	color: $favinactive;
+	visibility: hidden;
+
+	padding: em(14);
 			
-			background: $favbg;
-			border: none;
-			color: $favinactive;
-			visibility: hidden;
+	right: em(12) + $tileVertpad;
+	top: em(24);
 
-			&:active{
-				background: $favbgdown;
-			}
-			&::before{
-				line-height: 0;
-			}
-		}
+	&:active{
+		background: $favbgdown;
 	}
+	&::before{
+		line-height: 0;
+	}
+}
 
-	&.favorited{
-		button{
-			&.favorite{
-				@extend .icon-heart;
+.tile--favorited .tile-button--favorite{
+	@extend .icon-heart;
 				
-				background: $favbgactive;
-				color: $wht;
-			}
-		}
-	}
+	background: $favbgactive;
+	color: $wht;
 }

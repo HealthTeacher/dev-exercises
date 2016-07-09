@@ -1,3 +1,9 @@
+.page-tile{
+	background:{
+		color: $bodybg;
+	}
+}
+
 .tile{
 	background:{
 		color: $tilebg;
@@ -6,16 +12,10 @@
 	@include single-box-shadow(0, 7px, 4px, 1px, $tileshadow);
 }
 
-.tilepage{
-	background:{
-		color: $bodybg;
-	}
-}
-
-header{
+.tile-header{
 	cursor: pointer;
 }
 
-footer{
+.tile-footer{
 	border-top: 1px solid $footborder;
 }

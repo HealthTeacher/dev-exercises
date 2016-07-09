@@ -1,19 +1,21 @@
 %article.tile
-	%button.add-playlist.icon-plus
-	%header
-		%button.favorite
-		.tile-inner
-			%figure
-				%img{ :src => "./assets/images/the-penguin-song.png", :alt => "The Penguin Song"}
-				%figcaption.tile-info
-					%h3.tc.tile-title
-						%a{ :href => "#"}= "The Penguin Song"
-					%span.tc.runtime.icon-clock.ar
-						1:28
-	%footer
-		.tile-inner
-			%a{:href => "#"}
-				%span.ib.more
-					View More
-				%span.ib.category.dancing-guided
-					Guided Dancing
+  %button.tile-button--add
+  %header.tile-header
+    %button.tile-button--favorite
+    .tile-inner
+      %figure.tile-figure
+        %a.tile-link{ :href => "#"}
+          %img.tile-thumbnail{ :src => "./assets/images/the-penguin-song.png", :alt => "The Penguin Song"}
+          .tile-info
+            %h3.tile-title.table-cell
+              %span.tile-underline
+                The Penguin Song
+            %span.tile-runtime.table-cell.align-right
+              1:28
+  %footer.tile-footer
+    .tile-inner
+      %a.tile-link.tile-footer-link{:href => "#"}
+        %span.tile-more
+          View More
+        %span.tile-category--dancing
+          Guided Dancing

@@ -1,32 +1,10 @@
-footer{
-	a{		
-		display: block;
-		position: relative;
-		width: $tileWidth;
-		
-		.more{
-			position: absolute;
-			z-index: 1;
-		}
-
-		.category{
-			position: relative;
-			z-index: 2;
-		}
-
-		&:hover{
-			.category{
-				margin-left: em(90);
-			}
-		}
-	}
-
-	.tile-inner{
-		padding-bottom: em(14);
-	}
+.container--tile{
+	margin:	0 auto;
+	max-width:$tileMaxwidth;
+	padding:em(16) em(12) em(14);
 }
 
-.tc{
+.table-cell{
 	display: table-cell;
 }
 
@@ -35,23 +13,21 @@ footer{
 	max-width:	$tileMaxwidth;	
 	position:	relative;	
 	width:	$tileWidth;
+}
 
-	button{
-		position: absolute;
+.tile-category{
+	position: relative;
+	z-index: 2;
+}
 
-		&.add-playlist{			
-			left: 0;
-			top: 0;
+.tile-footer-link{
+	display: block;
+	position: relative;
+	width: $tileWidth;
 
-			width:	$plusBtnSz;
-			height: $plusBtnSz;
-		}
-
-		&.favorite{
-			padding: em(14);
-			
-			right: em(12) + $tileVertpad;
-			top: em(24);
+	&:hover{
+		.tile-category{
+			margin-left: em(90);
 		}
 	}
 }
@@ -64,10 +40,18 @@ footer{
 
 .tile-inner{
 	padding: 12px $tileVertpad 11px;
+
+	.tile-footer &{
+		padding-bottom: em(14);
+	}
 }
 
-#main-content{
-	margin:	0 auto;
-	max-width:$tileMaxwidth;
-	padding:em(16) em(12) em(14);
+.tile-more{
+	position: absolute;
+	z-index: 1;
 }
+
+
+
+
+

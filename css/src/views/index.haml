@@ -1,17 +1,17 @@
 !!! 5
 %html{ :lang => "en"}
-	%head
-		%title= "GoNoodle - Tile Component"
-		%meta{ :charset => "utf-8" }
-		%meta{ 'http-equiv' => "X-UA-Compatible", :content => "IE=edge" }
-		%meta{ :name => "viewport", :content => "width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"}
-		%link{ :href => "assets/css/noodletile.css", :media => "screen", :rel => "stylesheet", :type => "text/css" }		
+  %head
+    %title= "GoNoodle - Tile Component"
+    %meta{ :charset => "utf-8" }
+    %meta{ 'http-equiv' => "X-UA-Compatible", :content => "IE=edge" }
+    %meta{ :name => "viewport", :content => "width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"}
+    %link{ :href => "assets/css/noodletile.css", :media => "screen", :rel => "stylesheet", :type => "text/css" }		
 
-	%body.tilepage
-		%main#main-content
-			!=render :tile
-			!=render :tile
-			!=render :tile
+  %body.page-tile
+    %main.container--tile
+      !=render :tile
+      !=render :tile
+      !=render :tile
 
-		%script{ :src => "https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js" }
-		%script{ :src => "assets/js/noodletile.min.js" }
+    %script{ :src => "https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js" }
+    %script{ :src => "assets/js/noodletile.min.js" }

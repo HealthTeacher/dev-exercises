@@ -1,41 +1,41 @@
-a{
+.align-right{
+	text-align: right;
+}
+
+.tile{
+	font:{
+		family: $tilefont;
+		size: $baseFontSz;
+	};
+}
+
+.tile-link{
 	@include user-select(none);
 	
 	color: $linkdefault;
 	text-decoration: none;
-
-	h3 &{
-		border-bottom: 2px solid $tiletitle;
-		color: $tiletitle;
-		padding-bottom: 2px;
-	}
 }
 
-body{
-	font-size: $baseFontSz;
-}
-
-button{
-	font-family: $iconfont;
-}
-
-h3{
+.tile-title{
+	color: $tiletitle;
 	font-weight: 700;
 }
 
-.ar{
-	text-align: right;
+.tile-underline{
+	@extend .tile-title;
+
+	border-bottom: 2px solid $tiletitle;
+	padding-bottom: 2px;
 }
 
-.runtime{
+.tile-runtime{
+	@extend .icon-clock;
+
 	color: $tileruntime;
 	
 	&::before{
+		@extend .icon-before;
 		line-height: em(17);
 		vertical-align: middle;
 	}
-}
-
-.tile{
-	font-family: $tilefont;
 }
