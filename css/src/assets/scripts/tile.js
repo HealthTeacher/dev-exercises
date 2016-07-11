@@ -8,9 +8,9 @@
 			tiles = $.selectAll(classSelector);
 
 		for(var i = 0; i < tiles.length; i++){
-			var header = $.select('.tile-header',tiles[i]),
-				fave = $.select('.tile-button--favorite', tiles[i]),
-				footer = $.select('.tile-footer-link', tiles[i]);
+			var header = $.select('.js-tile-header',tiles[i]),
+				fave = $.select('.js-tile-favorite', tiles[i]),
+				footer = $.select('.js-tile-footer', tiles[i]);
 			
 			fave.addEventListener('click', toggleFavorite);
 			header.addEventListener('mouseenter', contentHover);
@@ -83,16 +83,16 @@
 	animatedFallback.prototype.getAnimations = function(){
 		return{
 			'fadeIn': function(target){
-				TweenMax.to($.select('.tile-button--favorite', target.parentNode), 0.4, {autoAlpha: 1});
+				TweenMax.to($.select('.js-tile-favorite', target.parentNode), 0.4, {autoAlpha: 1});
 			},
 			'fadeOut': function(target){
-				TweenMax.to($.select('.tile-button--favorite', target.parentNode), 0.4, {autoAlpha: 0});
+				TweenMax.to($.select('.js-tile-favorite', target.parentNode), 0.4, {autoAlpha: 0});
 			},
 			'slideIn': function(e){
-				TweenMax.to($.select('.tile-category', e.target), 0.6, {left: 95});
+				TweenMax.to($.select('.js-category', e.target), 0.6, {left: 95});
 			},
 			'slideOut': function(e){
-				TweenMax.to($.select('.tile-category', e.target), 0.3, {left: 0});
+				TweenMax.to($.select('.js-category', e.target), 0.3, {left: 0});
 			},
 			'favorite': function(target){
 				TweenMax.fromTo(target,0.2, {scale:0.88}, {scale:1});

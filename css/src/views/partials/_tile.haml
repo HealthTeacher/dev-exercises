@@ -1,7 +1,7 @@
 %article.tile
   %button.tile-button--add
-  %header.tile-header
-    %button.tile-button--favorite
+  %header.tile-header.js-tile-header
+    %button.tile-button--favorite.js-tile-favorite
     .tile-inner
       %figure.tile-figure
         %a.tile-link{ :href => "#", :onClick => "return false;"}
@@ -14,8 +14,8 @@
               1:28
   %footer.tile-footer
     .tile-inner
-      %a.tile-link.tile-footer-link{:href => "#", :onClick => "return false;"}
+      %a.tile-link--footer.js-tile-footer{:href => "#", :onClick => "return false;"}
         %span.tile-more
           View More
-        %span.tile-category.tile-category--dancing
+        %span.tile-category--dancing.js-category
           Guided Dancing

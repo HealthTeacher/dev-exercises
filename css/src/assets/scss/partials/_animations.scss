@@ -1,4 +1,4 @@
-.tile-footer-link{
+.tile-link--footer{
 	.tile-category{
 		@include transition($transitionFootOut);
 	}
@@ -10,7 +10,7 @@
 	}
 }
 
-.ie9 .tile-footer-link{
+.ie9 .tile-link--footer{
 	&:hover{
 		.tile-category{
 			margin-left: 0;

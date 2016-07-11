@@ -1,7 +1,8 @@
 .tile-button{
+	border: none;
 	font-family: $iconfont;
-	position: absolute;
 	outline: none;
+	position: absolute;
 }
 
 .tile-button--add{
@@ -10,7 +11,6 @@
 	@include border-radius($plusRadius);
 
 	background-color: $plusorange;
-	border: none;
 	border:{
 		bottom: $plusBorder;
 		right: $plusBorder;
@@ -30,7 +30,6 @@
 	@include border-radius($favRadius);
 	
 	background: $favbg;
-	border: none;
 	color: $favinactive;
 	padding: em(14);
 			

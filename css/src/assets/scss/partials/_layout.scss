@@ -11,7 +11,7 @@
 .tile{
 	margin-bottom: em(16);
 	max-width:	$tileMaxwidth;	
-	position:	relative;	
+	position:	relative;
 	width:	$tileWidth;
 }
 
@@ -20,7 +20,7 @@
 	z-index: 2;
 }
 
-.tile-footer-link{
+.tile-link--footer{
 	display: block;
 	position: relative;
 	width: $tileWidth;

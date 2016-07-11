@@ -16,16 +16,8 @@
 	text-decoration: none;
 }
 
-.tile-title{
-	color: $tiletitle;
-	font-weight: 700;
-}
-
-.tile-underline{
-	@extend .tile-title;
-
-	border-bottom: 2px solid $tiletitle;
-	padding-bottom: 2px;
+.tile-link--footer{
+	@extend .tile-link;
 }
 
 .tile-runtime{
@@ -39,3 +31,16 @@
 		vertical-align: middle;
 	}
 }
+
+.tile-title{
+	color: $tiletitle;
+	font-weight: 700;
+}
+
+.tile-underline{
+	@extend .tile-title;
+
+	border-bottom: 2px solid $tiletitle;
+	padding-bottom: 2px;
+}
+

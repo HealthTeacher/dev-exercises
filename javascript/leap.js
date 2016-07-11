@@ -23,8 +23,8 @@ Year.prototype.validateYear = function($year){
 	this.valid = true;
 
 	if(!regex.test($year) || (typeof $year !== 'string' && typeof $year !== 'number')){
-		console.warn($year + ' is not type or value.  Please only use numeric characters.');
 		this.valid = false;
+		throw new TypeError ($year + ' is not a valid type or value.  Please only use numeric characters.');
 	}
 	else	parseInt($year);
 
