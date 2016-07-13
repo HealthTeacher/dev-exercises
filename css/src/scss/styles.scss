@@ -1,0 +1,20 @@
+// styles.scss
+@import "../../bower_components/susy/sass/_susy.scss";
+@import 'components/_reset', 'components/_variables', 'components/_tile';
+
+ $susy: (
+   columns: 24,
+   gutters: 1/2,
+   math: fluid,
+   gutter-position: outside,
+   container: 980px,
+ );
+
+body{
+  background-color: $off-white;
+}
+
+.app{
+  @include container(24 center);
+  padding: 20px;
+}

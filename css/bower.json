@@ -1,0 +1,21 @@
+{
+  "name": "dev-exercises",
+  "description": "GoNoodle Exercise",
+  "main": "src/index.html",
+  "authors": [
+    "Adam Bradford <admbradford@gmail.com>"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "susy": "~2.2.12"
+  }
+}
