@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "description": "CSS exercise.",
   "scripts": {
-    "start": "gulp"
+    "start": "http-server ./src -d false",
+    "dev": "gulp"
   },
   "repository": {
     "type": "git",

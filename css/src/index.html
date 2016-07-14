@@ -1,8 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <title>GoNoodle Exercise</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js></script>
+    <![endif]-->
     <script src="//use.typekit.net/zun6hsm.js"></script>
     <script>try{Typekit.load({ async: true });}catch(e){}</script>
     <link rel="stylesheet" href="/assets/styles/styles.css">
@@ -11,6 +15,7 @@
     <div class="app">
       <article class="tile">
         <header class="tile__header">
+          <span class="tile__heart"><span class="icon-icon-heart"></span></span>
           <img src="/assets/images/the-penguin-song.png" class="tile__thumbnail" alt="The Penguin Song Thumbnail" />
           <a class="tile__title tk-museo-sans" href="#" title="Play the Penguin Song">The Penguin Song</a>
           <span class="tile__duration tk-museo-sans"><span class="icon-icon-clock"></span> 1:28</span>
@@ -20,5 +25,6 @@
         </footer>
       </article>
     </div>
+    <script src="/assets/scripts/tile.js"></script>
   </body>
 </html>
