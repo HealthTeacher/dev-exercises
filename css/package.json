@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "description": "CSS exercise.",
   "scripts": {
-    "start": "http-server ./src -d false"
+    "start": "http-server ./src -d false",
+    "dev": "gulp"
   },
   "repository": {
     "type": "git",
@@ -16,6 +17,9 @@
   },
   "homepage": "https://github.com/HealthTeacher/dev-exercises#readme",
   "devDependencies": {
+    "browser-sync": "^2.13.0",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^2.3.2",
     "http-server": "^0.8.5"
   }
 }

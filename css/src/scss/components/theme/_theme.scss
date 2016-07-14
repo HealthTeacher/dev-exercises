@@ -1,0 +1,44 @@
+// theme/_theme.scss
+
+@import "../../bower_components/susy/sass/_susy.scss";
+@import '_reset', '_variables';
+
+
+$susy: (
+  columns: 24,
+  gutters: 1/2,
+  math: fluid,
+  gutter-position: outside,
+  container: 980px,
+);
+
+body{
+ background-color: $off-white;
+}
+
+.app{
+ @include container(24 center);
+ padding: 20px;
+}
+
+.col-2{
+    @include container(24 center);
+    position: relative;
+    .col{
+        @include span(12 first);
+        position: relative;
+        &:last-child{
+            @include span(12 last);
+        }
+    }
+}
+
+.col-3{
+    @include container(24 center);
+    .col{
+        @include span(8 first);
+        &:last-child{
+            @include span(8 last);
+        }
+    }
+}
