@@ -15,5 +15,16 @@
       !=render :tile
       !=render :tile
       !=render :tile
-
+  
+    <!-- @if gitBranch === 'master' -->
     %script{ :src => "assets/js/noodletile.min.js" }
+    <!-- @endif -->
+    <!-- @if gitBranch == 'test' -->
+    %script{ :src => "assets/js/noodletile.js" }
+    <!-- @endif -->
+    <!-- @if gitBranch == 'dev' -->
+    %script{ :src => "assets/js/utilLayer.js" }
+    %script{ :src => "assets/js/typekit.js" }
+    %script{ :src => "assets/js/tile.js" }
+    %script{ :src => "assets/js/eventLayer.js" }
+    <!-- @endif -->

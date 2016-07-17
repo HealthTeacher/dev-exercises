@@ -69,14 +69,12 @@ var
 		in: source + 'asset/scss/noodletile.scss',
 		watch: [source + 'assets/scss/**/*', '!' + imguri.out + imguri.filename],
 		out: dest + 'assets/css/',
-		sassOpts: {
-			sourcemap: true
-		},
 		compassOpts: {
-			css: dest + 'assets/css',
+			css: dest + 'assets/css/',
+			require: ['compass-normalize'],
 			sass: source + 'assets/scss',
-			style: 'compressed',
-			require: ['compass-normalize']
+			sourcemap: true,
+			style: 'compressed'
 		}
 	},
 
@@ -94,6 +92,12 @@ var
 			escapeHtml: true,
 			doubleQuoteAttributes: true,
 			require: ['./src/functions/render.rb'], 
+		},
+		context: {
+			devBuild: devBuild,
+			gitBranch: gitBranch,
+			author: pkg.author,
+			version: pkg.version
 		}
 	},
 
@@ -106,6 +110,7 @@ var
 	js = {
 		in: source + 'assets/scripts/**/*',
 		out: dest + 'assets/js/',
+		testfile: 'noodletile.js',
 		filename: 'noodletile.min.js'
 	},
 
@@ -122,7 +127,7 @@ var
 		},
 		open: false,
 		notify: true
-	};
+	}
 
 /**
  * 
@@ -146,7 +151,16 @@ gulp.task('git', function(){
 		devBuild = regex.test(branch);
 		gitBranch = devBuild ? branch.match(regex)[0].toLowerCase() : branch;
 
-		console.log( pkg.name + ' ' + pkg.version + ', ' + (gitBranch) + ' build');
+		hamlOpts.context = {
+			devBuild: devBuild,
+			gitBranch: gitBranch
+		};
+
+		if(gitBranch !== 'master'){
+			css.compassOpts.style = 'expanded';
+		}
+
+		console.log( pkg.name + ' ' + pkg.version + ', ' + gitBranch + ' build');
 
 		plugins.runSequence(
 			'compile',
@@ -158,18 +172,19 @@ gulp.task('git', function(){
 //JS
 gulp.task('js', function(){
 	if(gitBranch === 'dev'){		
-		return gulp.src([plugins.mainBowerFiles({overrides: bowerOverrides.js}), js.in])
-			.pipe(newer(js.out))
+		return gulp.src(plugins.mainBowerFiles({overrides: bowerOverrides.js}).concat(js.in))
+			.pipe(plugins.newer(js.out))
 			.pipe(plugins.jshint())
 			.pipe(plugins.jshint.reporter('default'))
 			.pipe(plugins.jshint.reporter('fail'))
 			.pipe(gulp.dest(js.out))
 			.pipe(bs.stream());
 	} else if(gitBranch === 'test'){
-		return gulp.src([plugins.mainBowerFiles({overrides: bowerOverrides.js}), js.in])
+		return gulp.src(plugins.mainBowerFiles({overrides: bowerOverrides.js}).concat(js.in))
 			.pipe(plugins.deporder())
-			.pipe(plugins.concat(js.filename))
-			.pipe(gulp.dest(js.out));
+			.pipe(plugins.concat(js.testfile))
+			.pipe(gulp.dest(js.out))
+			.pipe(bs.stream());
 	}else {
 		return gulp.src(plugins.mainBowerFiles({overrides: bowerOverrides.js}).concat(js.in))
 			.pipe(plugins.deporder())
@@ -178,7 +193,8 @@ gulp.task('js', function(){
 			.pipe(plugins.stripDebug())	
 			.pipe(plugins.uglify())	
 			.pipe(plugins.size({title: 'JS out '}))
-			.pipe(gulp.dest(js.out));
+			.pipe(gulp.dest(js.out))
+			.pipe(bs.stream());
 	}
 });
 
@@ -191,8 +207,9 @@ gulp.task('vendor', function(){
 gulp.task('sass', ['imguri', 'svguri'], function(){
 	return gulp.src(css.in)
 		.pipe(plugins.compass(css.compassOpts))
-		.on('error', plugins.rubySass.logError)
-    	.pipe(gulp.dest(css.out));
+		.on('error', function(e){
+			console.log (e);
+		});
 });
 
 //image optimization
@@ -220,26 +237,35 @@ gulp.task('svguri', function(){
 
 //Haml compilation
 gulp.task('skywalker', function(){
-	gulp.src(hamlOpts.in)
+	return gulp.src(hamlOpts.in)
+		.pipe(plugins.preprocess({context: hamlOpts.context}))
 		.pipe(plugins.rubyHaml(hamlOpts.args))
-		.pipe(gulp.dest(hamlOpts.out));
+		.pipe(gulp.dest(hamlOpts.out))
+		.pipe(bs.stream());
+});
+
+gulp.task('cssStream', function(){
+	console.log('streamin');
 });
 
 gulp.task('watch', function(){
 	//browsersync
 	bs.init(syncOpts);
 	
+	//monitor sass changes
+	gulp.watch([css.watch, imguri.in, svguri.in], ['sass']);
+	//auto-inject workaround for bs.stream not working
+	//properly with gulp-compass
+	bs.watch(css.out + '*.css').on('change', bs.reload);
+	
 	//monitor haml changes
-	gulp.watch(hamlOpts.watch, ['skywalker'], bs.reload('*.html'));
+	gulp.watch(hamlOpts.watch, ['skywalker']);
 
 	//monitor image changes
 	gulp.watch(images.in, ['images'], bs.reload);
 
-	//monitor sass changes
-	gulp.watch([css.watch, imguri.in, svguri.in], ['sass'], bs.reload('**/*.css'));
-
 	//monitor js changes
-	gulp.watch(js.in, ['js'], bs.reload);
+	gulp.watch(js.in, ['js']);
 	
 });
 

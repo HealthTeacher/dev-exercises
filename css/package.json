@@ -30,6 +30,7 @@
     "gulp-jshint": "^1.11.2",
     "gulp-load-plugins": "^1.2.4",
     "gulp-newer": "^0.5.1",
+    "gulp-preprocess": "^1.2.0",
     "gulp-ruby-haml": "0.0.9",
     "gulp-ruby-sass": "^2.0.5",
     "gulp-size": "^2.0.0",
