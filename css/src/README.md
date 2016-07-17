@@ -19,21 +19,16 @@ The test was completed using a combination of Ruby and Node.js tools.
 - An additional fallback is in place to inject GSAP from a local source if the CDN load fails.
 
 ### Setup
-Before running the system ensure [Ruby](https://www.ruby-lang.org/en/) is installed on your system and install the following gems:
+Before running the system ensure [Ruby](https://www.ruby-lang.org/en/) is installed on your system and install the following gem:
 
+[Bundler](http://bundler.io/)
 ```
-gem install sass
+gem install bundler
 ```
+Install the Gemfile dependencies
 ```
-gem install compass
+bundle install
 ```
-```
-gem install compass-normalize
-```
-```
-gem install haml
-```
-
 ### Server
 The basic web server was replaced with [BrowserSync](https://browsersync.io/) to leverage cross-platform and browser testing in real-time, as well as for handling live reloading the viewport.
 

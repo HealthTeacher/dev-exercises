@@ -1,88 +1,69 @@
-//Gulp config
 
 // gulp and plugin includes
 var
-	gulp = require('gulp'),
-	imagemin = require('gulp-imagemin'),
-	newer = require('gulp-newer'),
-	concat = require('gulp-concat'),
-	preprocess = require('gulp-preprocess'),
-	del = require('del'),
-	pkg = require('./package.json'),
-	size = require('gulp-size'),
-	sass = require('gulp-ruby-sass'),
-	sourcemaps = require('gulp-sourcemaps'),
-	imacss = require('gulp-imacss'),
-	stripdebug = require('gulp-strip-debug'),
-	uglify = require('gulp-uglify'),
-	deporder = require('gulp-deporder'),
-	jshint = require('gulp-jshint'),
-	runSequence = require('run-sequence'),
-	git = require('gulp-git'),
 	bs = require('browser-sync').create(),
-	compass = require('gulp-compass'),
-	haml = require('gulp-ruby-haml'),
-	svgcss = require('gulp-svg-to-css');
-
-
+	del = require('del'),
+	gulp = require('gulp'),
+	pkg = require('./package.json'),
+	plugins = require('gulp-load-plugins')({
+		pattern: ['gulp-*', 'gulp.*', 'main-bower-files', 'run-sequence'],
+		replaceString: /\bgulp[\-.]/
+	}),
 
 //global declarations
 
-var
-	source = 'src/',
 	dest =	'app/',
-	hamlOpts,
-	js,
-	images,
-	imguri,
-	css,
-	sassOpts,
-	gitBranch,
-	devBuild,
-	syncOpts;
+	source = 'src/',
+	devBuild = false,
+	gitBranch = 'master',
 
-//TASKS
+/**
+ *
+ * Dependency overrides
+ * 
+ */
 
-gulp.task('initOpts', function(){
-	/******************************************************************
-		task sets init options once we're ready for them setting 
-		these values was moved into a task in order to ensure we've 
-		established the active git branch to determine output style
-	*******************************************************************/
-	hamlOpts = {
-		in: source + 'views/*.haml',
-		watch: source + 'views/**/*',
-		out: dest,
-		args: {
-			escapeHtml: true,
-			doubleQuoteAttributes: true,
-			require: ['./src/functions/render.rb'], 
+	bowerOverrides = {
+		js:{
+			"gsap": {
+				ignore: true
+			},
+			"utilLayer":{
+				main: "utilLayer.js"
+			}
+		},
+		vendor:{
+			"gsap": {
+				main: "./src/minified/TweenMax.min.js"
+			},
+			"utilLayer":{
+				ignore: "true"
+			}
 		}
 	};
 
-	js = {
-		in: source + 'assets/scripts/**/*',
-		out: dest + 'assets/js/',
-		filename: 'noodletile.min.js'
-	};
-
+/**
+ * 
+ * Styling-related config objs
+ * 
+ */
 	images = {
 		in: source + 'assets/images/**/*',
 		out: dest + 'assets/images'
-	};
+	},
 
 	imguri = {
 		in: source + 'assets/inline-image/*',
 		out: source + 'assets/scss/images/',
 		filename: '_datauri.scss',
 		namespace: 'img'
-	};
+	},
 
 	svguri = {
 		in: source + 'assets/svg/*',
 		out: source + 'assets/scss/images/',
 		filename: '_svguri.scss',
-	};
+	},
 
 	css = {
 		in: source + 'asset/scss/noodletile.scss',
@@ -97,7 +78,42 @@ gulp.task('initOpts', function(){
 			style: 'compressed',
 			require: ['compass-normalize']
 		}
-	};
+	},
+
+/**
+ *
+ * Markup preprocessing config
+ * 
+ */
+
+	hamlOpts = {
+		in: source + 'views/*.haml',
+		watch: source + 'views/**/*',
+		out: dest,
+		args: {
+			escapeHtml: true,
+			doubleQuoteAttributes: true,
+			require: ['./src/functions/render.rb'], 
+		}
+	},
+
+/**
+ *
+ * Scripting-related config objs
+ * 
+ */
+
+	js = {
+		in: source + 'assets/scripts/**/*',
+		out: dest + 'assets/js/',
+		filename: 'noodletile.min.js'
+	},
+
+/**
+ *
+ * Server config
+ * 
+ */
 
 	syncOpts = {
 		server: {
@@ -107,102 +123,106 @@ gulp.task('initOpts', function(){
 		open: false,
 		notify: true
 	};
-});
 
-//get the current git branch and initialize the build system
-gulp.task('git', function(){
-	var theBranch = git.revParse({args: '--abbrev-ref HEAD'}, function(err, branch){		
-		gitBranch = branch;
-		devBuild = ((branch || 'dev').trim().toLowerCase() !== 'master');
-		//show build type
-		console.log( pkg.name + ' ' + pkg.version + ', ' + (gitBranch) + ' build');
-		runSequence(
-			'initOpts',
-			'compile',
-			'watch'
-		);
-	});
-});
-
-
-//clean build folder
+/**
+ * 
+ * 'clean' task nukes contents of output dir
+ * 
+ * */
 gulp.task('clean', function(){
 	del([
 		dest + '*'
 	]);
 });
 
+/**
+ * 'git' task reads the checked out git branch
+ *  of the project to determine the output style
+ */
+gulp.task('git', function(){
+	var regex = /dev|test/gi,
+		theBranch = plugins.git.revParse({args: '--abbrev-ref HEAD'}, function(err, branch){		
+		
+		devBuild = regex.test(branch);
+		gitBranch = devBuild ? branch.match(regex)[0].toLowerCase() : branch;
+
+		console.log( pkg.name + ' ' + pkg.version + ', ' + (gitBranch) + ' build');
+
+		plugins.runSequence(
+			'compile',
+			'watch'
+		);
+	});
+});
+
 //JS
 gulp.task('js', function(){
-	if(devBuild && gitBranch === 'dev'){		
-		return gulp.src(js.in)
+	if(gitBranch === 'dev'){		
+		return gulp.src([plugins.mainBowerFiles({overrides: bowerOverrides.js}), js.in])
 			.pipe(newer(js.out))
-			.pipe(jshint())
-			.pipe(jshint.reporter('default'))
-			.pipe(jshint.reporter('fail'))
+			.pipe(plugins.jshint())
+			.pipe(plugins.jshint.reporter('default'))
+			.pipe(plugins.jshint.reporter('fail'))
 			.pipe(gulp.dest(js.out))
 			.pipe(bs.stream());
-	} else if(devBuild && gitBranch === 'test'){
-		del([
-			dest + 'js/*'
-		]);
-		return gulp.src(js.in)
-			.pipe(deporder())
-			.pipe(concat(js.filename))
+	} else if(gitBranch === 'test'){
+		return gulp.src([plugins.mainBowerFiles({overrides: bowerOverrides.js}), js.in])
+			.pipe(plugins.deporder())
+			.pipe(plugins.concat(js.filename))
 			.pipe(gulp.dest(js.out));
 	}else {
-		del([
-			dest + 'js/*'
-		]);
-		return gulp.src(js.in)
-			.pipe(deporder())
-			.pipe(concat(js.filename))
-			.pipe(size({title: 'JS in '}))
-			.pipe(stripdebug())	
-			.pipe(uglify())	
-			.pipe(size({title: 'JS out '}))
+		return gulp.src(plugins.mainBowerFiles({overrides: bowerOverrides.js}).concat(js.in))
+			.pipe(plugins.deporder())
+			.pipe(plugins.concat(js.filename))
+			.pipe(plugins.size({title: 'JS in '}))
+			.pipe(plugins.stripDebug())	
+			.pipe(plugins.uglify())	
+			.pipe(plugins.size({title: 'JS out '}))
 			.pipe(gulp.dest(js.out));
 	}
+});
+
+gulp.task('vendor', function(){
+	return gulp.src(plugins.mainBowerFiles({overrides: bowerOverrides.vendor}))
+		.pipe(gulp.dest(js.out + 'vendor/'));
 });
 
 //SASS compilation
 gulp.task('sass', ['imguri', 'svguri'], function(){
 	return gulp.src(css.in)
-		.pipe(compass(css.compassOpts))
-		.on('error', sass.logError)
-    	.pipe(gulp.dest(css.out))
-    	.pipe(bs.stream({match: '**/*.css'}));
+		.pipe(plugins.compass(css.compassOpts))
+		.on('error', plugins.rubySass.logError)
+    	.pipe(gulp.dest(css.out));
 });
 
 //image optimization
 gulp.task('images', function(){
 	return gulp.src(images.in)
-		.pipe(newer(images.out))
-		.pipe(imagemin())
+		.pipe(plugins.newer(images.out))
+		.pipe(plugins.imagemin())
 		.pipe(gulp.dest(images.out));
 });
 
 //inline image to css base64 URI conversion
 gulp.task('imguri', function(){
 	return gulp.src(imguri.in)
-		.pipe(imagemin())
-		.pipe(imacss(imguri.filename, imguri.namespace))
+		.pipe(plugins.imagemin())
+		.pipe(plugins.imacss(imguri.filename, imguri.namespace))
 		.pipe(gulp.dest(imguri.out));
 });
 
 //inline svgs
 gulp.task('svguri', function(){
 	return gulp.src(svguri.in)
-		.pipe(svgcss(svguri.filename))
+		.pipe(plugins.svgToCss(svguri.filename))
 		.pipe(gulp.dest(svguri.out));
 });
 
 //Haml compilation
 gulp.task('skywalker', function(){
 	gulp.src(hamlOpts.in)
-		.pipe(haml(hamlOpts.args))
-		.pipe(gulp.dest(hamlOpts.out))
-		.pipe(bs.stream());
+		.pipe(plugins.rubyHaml(hamlOpts.args))
+		.pipe(gulp.dest(hamlOpts.out));
 });
 
 gulp.task('watch', function(){
@@ -210,13 +230,13 @@ gulp.task('watch', function(){
 	bs.init(syncOpts);
 	
 	//monitor haml changes
-	gulp.watch(hamlOpts.watch, ['skywalker']);
+	gulp.watch(hamlOpts.watch, ['skywalker'], bs.reload('*.html'));
 
 	//monitor image changes
-	gulp.watch(images.in, ['images']);
+	gulp.watch(images.in, ['images'], bs.reload);
 
 	//monitor sass changes
-	gulp.watch([css.watch, imguri.in, svguri.in], ['sass']);
+	gulp.watch([css.watch, imguri.in, svguri.in], ['sass'], bs.reload('**/*.css'));
 
 	//monitor js changes
 	gulp.watch(js.in, ['js'], bs.reload);
@@ -224,7 +244,7 @@ gulp.task('watch', function(){
 });
 
 
-gulp.task('compile', ['images', 'skywalker', 'sass', 'js']);
+gulp.task('compile', ['images', 'skywalker', 'sass', 'js', 'vendor']);
 
 
 //default task

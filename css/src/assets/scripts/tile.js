@@ -1,5 +1,3 @@
-//require utilLayer.js
-
 (function($){
 	
 	$.tile = function(classSelector){
