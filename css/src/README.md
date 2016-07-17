@@ -17,7 +17,8 @@ The test was completed using a combination of Ruby and Node.js tools.
 - Additionally, all animations have been converted to CSS3 tweens.
 - [GSAP](https://greensock.com/) is still being used for IE9.  A fallback has been established so that all animations mirror that of modern browsers supporting CSS3 animation functionality.  
 - An additional fallback is in place to inject GSAP from a local source if the CDN load fails.
-- Bower support has been integrated to manage GSAP and utilLayer dependencies.
+- Bower support has been integrated to manage common JS dependencies.
+- utilLayer.js has been converted to a Gist and is now managed via Bower
 
 ### Setup
 Before running the system ensure [Ruby](https://www.ruby-lang.org/en/) is installed on your system and install the following gem:
@@ -31,7 +32,7 @@ Install the Gemfile dependencies
 bundle install
 ```
 
-With [Bower](https://bower.io/) installed.  Install additional dependencies.
+With [Bower](https://bower.io/) installed, add additional project dependencies.
 ```
 bower install
 ```
