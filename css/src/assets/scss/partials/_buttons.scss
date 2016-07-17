@@ -1,0 +1,54 @@
+.tile-button{
+	border: none;
+	font-family: $iconfont;
+	outline: none;
+	position: absolute;
+}
+
+.tile-button--add{
+	@extend .tile-button;
+	@extend .icon-plus;
+	@include border-radius($plusRadius);
+
+	background-color: $plusorange;
+	border:{
+		bottom: $plusBorder;
+		right: $plusBorder;
+	}
+	color: $wht;
+
+	left: 0;
+	top: 0;
+
+	width:	$plusBtnSz;
+	height: $plusBtnSz;
+}
+
+.tile-button--favorite{
+	@extend .tile-button;
+	@extend .icon-heart-outline;
+	@include border-radius($favRadius);
+	
+	background: $favbg;
+	color: $favinactive;
+	padding: em(14);
+			
+	right: em(12) + $tileVertpad;
+	top: em(24);
+
+	&:active{
+		background: $favbgdown;
+	}
+	&::before{
+		line-height: 0;
+	}
+}
+
+.tile--favorited .tile-button--favorite{
+	@extend .icon-heart;
+				
+	background: $favbgactive;
+	color: $wht;
+	opacity: 1;
+	visibility: inherit;
+}

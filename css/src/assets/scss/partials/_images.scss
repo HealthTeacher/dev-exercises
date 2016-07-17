@@ -1,0 +1,24 @@
+.tile-category{
+	background: {
+		color: $wht;
+		position: top left;
+		repeat: no-repeat;
+	};
+}
+
+.tile-category--dancing{
+	@extend .svg-icon-shoe-dancing;
+	@extend .tile-category;
+
+	padding: em(7);
+	padding-left: em(37);
+}
+
+.tile-figure{
+	margin: 0;
+}
+
+.tile-thumbnail{
+	width:	100%;
+	height:	auto;
+}

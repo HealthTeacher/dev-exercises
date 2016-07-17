@@ -1,0 +1,22 @@
+{
+  "name": "css-exercise",
+  "description": "GoNoodle CSS Exercise",
+  "main": "main",
+  "authors": [
+    "GoNoodle"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/tpizza/dev-exercises",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "utilLayer": "*",
+    "gsap": "^1.18.5"
+  }
+}

@@ -1,0 +1,19 @@
+.page-tile{
+	background-color: $bodybg;
+}
+
+.tile{
+	@include border-radius($tileRadius);
+	@include single-box-shadow(0, 7px, 4px, 1px, $tileshadow);
+
+	background-color: $tilebg;
+	 -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.tile-header{
+	cursor: pointer;
+}
+
+.tile-footer{
+	border-top: 1px solid $footborder;
+}
